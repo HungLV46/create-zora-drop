@@ -1,0 +1,63 @@
+{
+  "name": "test-drop",
+  "symbol": "td",
+  "defaultAdmin": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
+  "editionSize": 500,
+  "royaltyBPS": 100,
+  "fundsRecipient": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
+  "metadataURIBase": "https://coral-psychological-swan-300.mypinata.cloud/ipfs/QmeUEDmrS7bEWwbtTuq7it6YRBYqyT6yyEcrhKbhnQYtc2/",
+  "saleConfig": {
+    "presale": {
+      "startTime": 1714719540,
+      "endTime": 1714719541,
+      "whitelist": [
+        {
+          "user": "0x07966725a7928083bA85e75276518561D0c28B19",
+          "price": "0.02",
+          "maxCanMint": 5
+        },
+        {
+          "user": "0x8CA40d25a725CB131fA253b7AEF87a01eBD3E29e",
+          "maxCanMint": 5,
+          "price": "0.01"
+        },
+        {
+          "user": "0x83eFc260Da533B0B03d88b2F00d59785277c4e71",
+          "maxCanMint": 5,
+          "price": "0.01"
+        },
+        {
+          "user": "0x2F7218644600c2860709623de3E8A1f82d27ed3b",
+          "maxCanMint": 5,
+          "price": "0.01"
+        },
+        {
+          "user": "0x9444390c01Dd5b7249E53FAc31290F7dFF53450D",
+          "maxCanMint": 4,
+          "price": "0.01"
+        },
+        {
+          "user": "0x2F7218644600c2860709623de3E8A1f82d27ed3b",
+          "maxCanMint": 4,
+          "price": "0.1"
+        }
+      ]
+    },
+    "publicSale": {
+      "startTime": 1714719542,
+      "endTime": 1714719543,
+      "publicSalePrice": "2.0"
+    },
+    "maxSalePurchasePerAddress": 0
+  },
+  "metadata": {
+    "name": "Dragon-9",
+    "image_url": "https://gateway.pinata.cloud/ipfs/QmTKws2sZ6Q3mKZ9bmZPZFP2bdRtmydxLWUg3yZfT6Yhzd/1.png",
+    "banner_image_url": "https://gateway.pinata.cloud/ipfs/QmTKws2sZ6Q3mKZ9bmZPZFP2bdRtmydxLWUg3yZfT6Yhzd/1.png",
+    "discord_url": "https://discord.com/invite/Y3RZDrregV",
+    "description": "A captivating ensemble celebrating the elusive beauty of these creatures. Our collection features realistic portraits, each meticulously crafted to capture their intricate details.",
+    "external_url": "https://aura.network",
+    "twitter_username": "AuraNetworkHQ",
+    "twitter_url": "https://twitter.com/AuraNetworkHQ"
+  }
+}
