@@ -5,11 +5,11 @@
   "editionSize": 500,
   "royaltyBPS": 100,
   "fundsRecipient": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
-  "metadataURIBase": "https://coral-psychological-swan-300.mypinata.cloud/ipfs/QmeUEDmrS7bEWwbtTuq7it6YRBYqyT6yyEcrhKbhnQYtc2/",
+  "metadataURIBase": "http://ipfs.dev.aura.network:8080/ipfs/QmeUEDmrS7bEWwbtTuq7it6YRBYqyT6yyEcrhKbhnQYtc2/",
   "saleConfig": {
     "presale": {
-      "startTime": 1714719540,
-      "endTime": 1714719541,
+      "startTime": 1715156849,
+      "endTime": 1715163129,
       "whitelist": [
         {
           "user": "0x07966725a7928083bA85e75276518561D0c28B19",
@@ -44,8 +44,8 @@
       ]
     },
     "publicSale": {
-      "startTime": 1714719542,
-      "endTime": 1714719543,
+      "startTime": 1715173129,
+      "endTime": 1715183129,
       "publicSalePrice": "2.0"
     },
     "maxSalePurchasePerAddress": 0
