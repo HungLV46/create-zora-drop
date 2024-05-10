@@ -146,3 +146,8 @@ node_modules
 
 # Hardhat Ignition default folder for deployments against a local node
 ignition/deployments/chain-31337
+
+# scripts specific
+/scripts/ipfs/animations
+/scripts/ipfs/images
+/scripts/ipfs/tokens-metadata.csv

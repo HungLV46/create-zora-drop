@@ -8,45 +8,45 @@
   "metadataURIBase": "http://ipfs.dev.aura.network:8080/ipfs/QmeUEDmrS7bEWwbtTuq7it6YRBYqyT6yyEcrhKbhnQYtc2/",
   "saleConfig": {
     "presale": {
-      "startTime": 1715156849,
-      "endTime": 1715163129,
+      "startTime": 1715242493,
+      "endTime": 1715246093,
       "whitelist": [
         {
-          "user": "0x07966725a7928083bA85e75276518561D0c28B19",
+          "user": "0xD3E70Ba6F42B97cCd97b7c3A8fBE990437095075",
           "price": "0.02",
-          "maxCanMint": 5
+          "maxCanMint": 2
         },
         {
-          "user": "0x8CA40d25a725CB131fA253b7AEF87a01eBD3E29e",
-          "maxCanMint": 5,
+          "user": "0x2Dadb91AAa9e5e762f47e67bD8c75B14fF8061D4",
+          "price": "0.02",
+          "maxCanMint": 2
+        },
+        {
+          "user": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
+          "maxCanMint": 2,
           "price": "0.01"
         },
         {
-          "user": "0x83eFc260Da533B0B03d88b2F00d59785277c4e71",
-          "maxCanMint": 5,
+          "user": "0x256b9D4598804221cCD4A6a236034238EF750d4b",
+          "maxCanMint": 2,
           "price": "0.01"
         },
         {
-          "user": "0x2F7218644600c2860709623de3E8A1f82d27ed3b",
-          "maxCanMint": 5,
+          "user": "0x6935af443F349F506a439C034f95f8219C339bAF",
+          "maxCanMint": 2,
           "price": "0.01"
         },
         {
-          "user": "0x9444390c01Dd5b7249E53FAc31290F7dFF53450D",
-          "maxCanMint": 4,
+          "user": "0xBd7F975B203078b63cfc2DB57eAAeAC71Df9b32E",
+          "maxCanMint": 2,
           "price": "0.01"
-        },
-        {
-          "user": "0x2F7218644600c2860709623de3E8A1f82d27ed3b",
-          "maxCanMint": 4,
-          "price": "0.1"
         }
       ]
     },
     "publicSale": {
-      "startTime": 1715173129,
-      "endTime": 1715183129,
-      "publicSalePrice": "2.0"
+      "startTime": 1715246094,
+      "endTime": 1715332493,
+      "publicSalePrice": "0"
     },
     "maxSalePurchasePerAddress": 0
   },
