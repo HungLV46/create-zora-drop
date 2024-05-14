@@ -5,7 +5,7 @@
   "editionSize": 50,
   "royaltyBPS": 1000,
   "fundsRecipient": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
-  "metadataURIBase": "ipfs://QmNjyxkYpouBisAUiyK74ogFZ4VLREfXaMBek2LTTRhUxm/",
+  "metadataURIBase": "ipfs://QmWSu1nxARKf7kPaQqFkHdfdYtWmDmfUr8RhLKoH4q42Wc/",
   "saleConfig": {
     "presale": {
       "startTime": 1715671948,
@@ -45,7 +45,7 @@
     },
     "publicSale": {
       "startTime": 1715672148,
-      "endTime": 1715672248,
+      "endTime": 1915672248,
       "publicSalePrice": "0.01",
       "maxSalePurchasePerAddress": 0
     }
