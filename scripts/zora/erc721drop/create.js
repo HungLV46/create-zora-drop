@@ -55,12 +55,15 @@ function createNetworkEntities(chainName, deployerPrivateKey) {
 
 async function processZoraDropConfig(configPath, defaultAddress) {
   const rawConfig = JSON.parse(fs.readFileSync(configPath));
+  const maxSupply = rawConfig.editionSize;
+
+  // rawConfig.metadata.mintConfig = { maxSupply: maxSupply, phases: [] };
 
   const config = {
     name: rawConfig.name,
     symbol: rawConfig.symbol,
     defaultAdmin: rawConfig.defaultAdmin || defaultAddress,
-    editionSize: rawConfig.editionSize,
+    editionSize: maxSupply,
     royaltyBPS: rawConfig.royaltyBPS,
     fundsRecipient: rawConfig.fundsRecipient || defaultAddress,
     metadataURIBase: rawConfig.metadataURIBase,
@@ -86,16 +89,70 @@ async function processZoraDropConfig(configPath, defaultAddress) {
 
     if(!processWhitelistResposne.success) throw new Exception("Presale whiltelist process failed", JSON.stringify(processWhitelistResposne));
   
-    config.saleConfig.presaleStart = rawConfig.saleConfig.presale.startTime;
-    config.saleConfig.presaleEnd = rawConfig.saleConfig.presale.endTime;
+    const presaleStartTime = rawConfig.saleConfig.presale.startTime;
+    const presaleEndTime = rawConfig.saleConfig.presale.endTime;
+    config.saleConfig.presaleStart = presaleStartTime;
+    config.saleConfig.presaleEnd = presaleEndTime;
     config.saleConfig.presaleMerkleRoot = `0x${processWhitelistResposne.root}`;
+
+    // rawConfig.metadata.mintConfig.phases.push({
+    //   startTime: presaleStartTime,
+    //   endTime: presaleEndTime,
+    //   tx: {
+    //     method: "0x25024a2b",
+    //     params: [
+    //       {
+    //         kind: "QUANTITY",
+    //         name: "quantity",
+    //         abiType: "uint256"
+    //       },
+    //       {
+    //         kind: "QUANTITY",
+    //         name: "max_quantity",
+    //         abiType: "uint256"
+    //       },          {
+    //         kind: "QUANTITY",
+    //         name: "price_per_token",
+    //         abiType: "uint256"
+    //       },
+    //       {
+    //         kind: "MAPPING_RECIPIENT",
+    //         name: "proof",
+    //         abiType: "bytes32[]"
+    //       }
+    //     ]
+    //   }
+    // });
   }
 
   // process public sale config
   if(!_.isEmpty(rawConfig.saleConfig.publicSale)) {
-    config.saleConfig.publicSaleStart = rawConfig.saleConfig.publicSale.startTime;
-    config.saleConfig.publicSaleEnd = rawConfig.saleConfig.publicSale.endTime;
-    config.saleConfig.publicSalePrice = ethers.parseEther(rawConfig.saleConfig.publicSale.publicSalePrice).toString();
+    const publicSaleStartTime = rawConfig.saleConfig.publicSale.startTime;
+    const publicSaleEndTime = rawConfig.saleConfig.publicSale.endTime;
+    const publicSalePrice = ethers.parseEther(rawConfig.saleConfig.publicSale.publicSalePrice).toString();
+    const maxPublicSalePerAddress = rawConfig.saleConfig.publicSale.maxSalePurchasePerAddress;
+
+    config.saleConfig.publicSaleStart = publicSaleStartTime;
+    config.saleConfig.publicSaleEnd = publicSaleEndTime;
+    config.saleConfig.publicSalePrice = publicSalePrice;
+    config.saleConfig.maxSalePurchasePerAddress = maxPublicSalePerAddress;
+
+    // rawConfig.metadata.mintConfig.phases.push({
+    //   price: publicSalePrice,
+    //   startTime: publicSaleStartTime,
+    //   endTime: publicSaleEndTime,
+    //   maxMintsPerWallet: maxPublicSalePerAddress,
+    //   tx: {
+    //     method: "0xefef39a1",
+    //     params: [
+    //       {
+    //         kind: "QUANTITY",
+    //         name: "quantity",
+    //         abiType: "uint256"
+    //       }
+    //     ]
+    //   }
+    // });
   }
 
   // upload metadata to IFPS to create contract URI
@@ -109,10 +166,10 @@ async function processZoraDropConfig(configPath, defaultAddress) {
   console.log({ ...config,
     saleConfig: {
       ...config.saleConfig,
-      presaleStart: new Date(config.saleConfig.presaleStart * 1000),
-      presaleEnd: new Date(config.saleConfig.presaleEnd * 1000),
-      publicSaleStart: new Date(config.saleConfig.publicSaleStart * 1000),
-      publicSaleEnd: new Date(config.saleConfig.publicSaleEnd * 1000)
+      presaleStart: new Date(config.saleConfig.presaleStart * 1000).toLocaleString(),
+      presaleEnd: new Date(config.saleConfig.presaleEnd * 1000).toLocaleString(),
+      publicSaleStart: new Date(config.saleConfig.publicSaleStart * 1000).toLocaleString(),
+      publicSaleEnd: new Date(config.saleConfig.publicSaleEnd * 1000).toLocaleString()
     }
   }, "\n");
 
@@ -146,7 +203,7 @@ async function createZoraDrop() {
   const transactionReceipt = await provider.getTransactionReceipt(transactionHash);
   if(transactionReceipt) {
     console.log("Transaction status:", transactionReceipt.status === 1 ? "success" : "failed");
-    console.log("Collection contract address:", transactionReceipt.logs.find(log => log.index === 0).address, "\n");
+    console.log("Collection contract address:", transactionReceipt.logs.find(log => log.index === 0).address.toLowerCase(), "\n");
   } else {
     console.log("Cannot check status of the transaction.");
   }

@@ -10,24 +10,12 @@ const { getFilenameWithoutExtension, createProcessBar } = require('../util');
 
 const ipfsClient = create({ url: process.env.IPFS_GATEWAY, timeout: 60000 });
 
-const createIpfsFolder = async (folderName) => {
-  let folderExisted = false;
-
-  await ipfsClient.files.mkdir(`/${folderName}`).catch((error) => {
-    if (error.toString().startsWith('HTTPError: file already exists')) {
-      folderExisted = true;
-    } else {
-      throw error;
-    }
-  });
-
-  return folderExisted;
-};
-
 const uploadLocalFolderToIpfs = async (localFolderPath, ipfsFolderPath, chunkSize = 10) => {
-  await ipfsClient.files.mkdir(ipfsFolderPath);
-
   const filenames = fs.readdirSync(localFolderPath);
+
+  if(_.isEmpty(filenames)) return {};
+
+  await ipfsClient.files.mkdir(ipfsFolderPath);
   const processBar = createProcessBar(`Upload local folder (${localFolderPath}) to IPFS`, filenames.length / chunkSize);
   for (let i = 0; i < filenames.length; i += chunkSize) {
     const uploadPromisses = filenames.slice(i, i + chunkSize).map((filename) => {
@@ -67,8 +55,6 @@ const uploadMetadataObjectToIPFS = async (metadataObjects, ipfsFolderPath, chunk
   }
 
   const folderCid = (await ipfsClient.files.stat(ipfsFolderPath)).cid.toString();
-
-  console.log(`\nUploaded metadata. Link: ${process.env.IPFS_LINK_PREFIX}${folderCid}`);
   return folderCid;
 };
 
@@ -96,23 +82,27 @@ const uploadToIPFS = async (metadataObjects, localImageFolderPath, localAnimatio
     }
 
     metadataObject.image = `ipfs://${imageFolderCid}/${imageFilenames[j]}`;
-    if (!_.isEmpty(localAnimationFolderPath) && animationFolderCid) {
+    if (!_.isEmpty(animationFilenames) && animationFolderCid) {
       metadataObject.animation_url = `ipfs://${animationFolderCid}/${animationFilenames[j]}`;
     }
   }
 
   // 3 .upload all metadata objects to files in 1 IPFS folder
-  await uploadMetadataObjectToIPFS(metadataObjects, `/${ipfsFoldername}/metadata`);
+  const medatadaFolderCid = await uploadMetadataObjectToIPFS(metadataObjects, `/${ipfsFoldername}/metadata`);
+
+  console.log(`\n\nUploaded metadata. Link: ${process.env.IPFS_LINK_PREFIX}${medatadaFolderCid}`);
+  const collectionFolderCid = (await ipfsClient.files.stat(`/${ipfsFoldername}`)).cid.toString();
+  console.log("Collection folder CID ", collectionFolderCid);
 };
 
 async function main() {
-  const ipfsFoldername = process.argv0[2];
-  const overwrite = process.argv0[3] || false;
+  const ipfsFoldername = process.argv[2];
+  const overwrite = process.argv[3] || false;
 
   if(!ipfsFoldername) throw new Exception(`Name of folder (used as IPFS upload destination) must be specified as the first argument of the script`);
 
 
-  const metadataCSVFilePath = './scripts/ipfs/tokens-metadata-example.csv';
+  const metadataCSVFilePath = './scripts/ipfs/tokens-metadata.csv';
   const imagesFolderPath = './scripts/ipfs/images';
   const animationsFolderPath = './scripts/ipfs/animations';
 
@@ -121,12 +111,11 @@ async function main() {
   const imageFilenames = fs.readdirSync(imagesFolderPath);
   validateImages(imageFilenames, filenames);
   
-  if(animationsFolderPath) {
-    const animationFilenames = fs.readdirSync(animationsFolderPath);
+  const animationFilenames = fs.readdirSync(animationsFolderPath);
+  if(!_.isEmpty(animationFilenames)) {
     validateAnimations(animationFilenames, filenames);
   }
 
-  await createIpfsFolder(ipfsFoldername);
   await uploadToIPFS(metadataObjects, imagesFolderPath, animationsFolderPath, ipfsFoldername, overwrite);
 }
 

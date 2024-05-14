@@ -1,15 +1,15 @@
 {
-  "name": "test-drop",
-  "symbol": "td",
-  "defaultAdmin": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
-  "editionSize": 500,
-  "royaltyBPS": 100,
-  "fundsRecipient": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
-  "metadataURIBase": "http://ipfs.dev.aura.network:8080/ipfs/QmeUEDmrS7bEWwbtTuq7it6YRBYqyT6yyEcrhKbhnQYtc2/",
+  "name": "Test mint 01",
+  "symbol": "TM01",
+  "defaultAdmin": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
+  "editionSize": 50,
+  "royaltyBPS": 1000,
+  "fundsRecipient": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
+  "metadataURIBase": "ipfs://QmNjyxkYpouBisAUiyK74ogFZ4VLREfXaMBek2LTTRhUxm/",
   "saleConfig": {
     "presale": {
-      "startTime": 1715242493,
-      "endTime": 1715246093,
+      "startTime": 1715671948,
+      "endTime": 1715672048,
       "whitelist": [
         {
           "user": "0xD3E70Ba6F42B97cCd97b7c3A8fBE990437095075",
@@ -37,27 +37,28 @@
           "price": "0.01"
         },
         {
-          "user": "0xBd7F975B203078b63cfc2DB57eAAeAC71Df9b32E",
+          "user": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
           "maxCanMint": 2,
           "price": "0.01"
         }
       ]
     },
     "publicSale": {
-      "startTime": 1715246094,
-      "endTime": 1715332493,
-      "publicSalePrice": "0"
-    },
-    "maxSalePurchasePerAddress": 0
+      "startTime": 1715672148,
+      "endTime": 1715672248,
+      "publicSalePrice": "0.01",
+      "maxSalePurchasePerAddress": 0
+    }
   },
   "metadata": {
-    "name": "Dragon-9",
-    "image_url": "https://gateway.pinata.cloud/ipfs/QmTKws2sZ6Q3mKZ9bmZPZFP2bdRtmydxLWUg3yZfT6Yhzd/1.png",
-    "banner_image_url": "https://gateway.pinata.cloud/ipfs/QmTKws2sZ6Q3mKZ9bmZPZFP2bdRtmydxLWUg3yZfT6Yhzd/1.png",
-    "discord_url": "https://discord.com/invite/Y3RZDrregV",
-    "description": "A captivating ensemble celebrating the elusive beauty of these creatures. Our collection features realistic portraits, each meticulously crafted to capture their intricate details.",
-    "external_url": "https://aura.network",
+    "name": "Test mint 01",
+    "image_url": "ipfs://QmR1aJrEQf1bPR5sRsqNVtzDGPR2Ych4HDbYdKBhPDaCS2/Logo.jpg",
+    "banner_image_url": "ipfs://QmR1aJrEQf1bPR5sRsqNVtzDGPR2Ych4HDbYdKBhPDaCS2/banner.jpg",
+    "description": "Coffee painting is a unique art form that involves using coffee as a medium to create images and designs.",
+    "discord": "https://discord.gg/NpRfGZtZ",
+    "twitter": "https://twitter.com/AuraNetworkHQ",
     "twitter_username": "AuraNetworkHQ",
-    "twitter_url": "https://twitter.com/AuraNetworkHQ"
+    "telegram": "https://t.me/auranwchat",
+    "website": "https://evm.serenity.seekhype.io/serenity"
   }
 }
