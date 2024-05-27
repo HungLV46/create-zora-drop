@@ -1,5 +1,18 @@
 const getNetworkConfig = (chainName) => {
   switch(chainName) {
+    case "euphoria": return {
+      chain_id: 6321,
+      json_rpc_url: "https://jsonrpc.euphoria.aura.network",
+      zora_contract_addresses: {
+        "DROP_METADATA_RENDERER": "0x0458316F3549D0C9Bba67966d07E0909Bf83F8FD",
+        "EDITION_METADATA_RENDERER": "0xf139F465d0599fD2814DAC86526DF5De1875B5E8",
+        "ERC721DROP_IMPL": "0xD04C2b6F8ceD1052B3cAE9Ba61021B9f9C87c49b",
+        // "ERC721DROP_IMPL_VERSION": 14,
+        "FACTORY_UPGRADE_GATE": "0x5f5CA4097fB1dA6F9C85Af43796421E2ab5A4D01",
+        "ZORA_NFT_CREATOR_V1_IMPL": "0x76F495DcebEc4A4d4c5E488243fd4509A158656a",
+        "ZORA_NFT_CREATOR_PROXY": "0xc1d364764D1a05bF7E10668146B2aB43C4966e00"
+      }
+    }
     case "serenity": return {
       chain_id: 1236,
       json_rpc_url: "https://jsonrpc.serenity.aura.network",
