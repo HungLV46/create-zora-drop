@@ -8,44 +8,44 @@
   "metadataURIBase": "ipfs://QmWSu1nxARKf7kPaQqFkHdfdYtWmDmfUr8RhLKoH4q42Wc/",
   "saleConfig": {
     "presale": {
-      "startTime": 1715671948,
-      "endTime": 1715672048,
+      "startTime": 1717401265,
+      "endTime": 1915672248,
       "whitelist": [
         {
           "user": "0xD3E70Ba6F42B97cCd97b7c3A8fBE990437095075",
-          "price": "0.02",
+          "price": "0",
           "maxCanMint": 2
         },
         {
           "user": "0x2Dadb91AAa9e5e762f47e67bD8c75B14fF8061D4",
-          "price": "0.02",
+          "price": "0",
           "maxCanMint": 2
         },
         {
           "user": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
           "maxCanMint": 2,
-          "price": "0.01"
+          "price": "0"
         },
         {
           "user": "0x256b9D4598804221cCD4A6a236034238EF750d4b",
           "maxCanMint": 2,
-          "price": "0.01"
+          "price": "0"
         },
         {
           "user": "0x6935af443F349F506a439C034f95f8219C339bAF",
           "maxCanMint": 2,
-          "price": "0.01"
+          "price": "0"
         },
         {
           "user": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
           "maxCanMint": 2,
-          "price": "0.01"
+          "price": "0"
         }
       ]
     },
     "publicSale": {
-      "startTime": 1715672148,
-      "endTime": 1915672248,
+      "startTime": 1915672249,
+      "endTime": 1925672248,
       "publicSalePrice": "0.01",
       "maxSalePurchasePerAddress": 0
     }

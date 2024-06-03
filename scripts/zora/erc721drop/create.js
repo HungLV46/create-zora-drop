@@ -10,6 +10,7 @@ const _ = require("lodash");
 const axios = require('axios').default;
 const { sleep } = require('../../util');
 const { create } = require('ipfs-http-client');
+const { makeTree } = require('../merkle-tree/merkle');
 
 function getParamsForScript() {
   const privateKey = process.env.PRIVATE_KEY;
@@ -49,15 +50,47 @@ function createNetworkEntities(chainName, deployerPrivateKey) {
   return {
     provider,
     deployer_address: deployerAddress,
-    zora_creator_proxy_contract: proxyContract
+    zora_creator_proxy_contract: proxyContract,
+    mint_fee_per_quantity: networkConfig.mint_fee_per_quantity
   }
 }
 
-async function processZoraDropConfig(configPath, defaultAddress) {
+// has side effect
+async function processWhitelist(whitelist) {
+  // generate merkle proofs
+  const merkleTree = makeTree(whitelist);
+  const presaleMerkleRoot = merkleTree.root;
+
+  const allowlist = await axios.get(`https://${process.env.GRAPHQL_DOMAIN}/api/rest/allowlist/${presaleMerkleRoot}`)
+    .then(response => response.data.evmallowlists);
+  // insert merkle proofs to db
+  if(_.isEmpty(allowlist)) {
+    console.log("Insert allowlist items")
+    await axios.post(`https://${process.env.GRAPHQL_DOMAIN}/api/rest/insert-allowlist`, {
+      id: presaleMerkleRoot,
+      allowlists_items: {
+        data: merkleTree.entries.map((entry, index) => ({
+          index,
+          address: "\\" + entry.user.slice(1),
+          max_mints: entry.maxCanMint,
+          price: entry.price,
+          actual_price: entry.price + fee,
+          proofs: entry.proof
+        }))
+      }
+    }, {
+      headers: {
+        "x-hasura-admin-secret": process.env.GRAPHQL_ADMIN_SECRET
+      }
+    }).then(response => console.log(JSON.stringify(response.data.evminsert_allowlists) + "\n"));
+  }
+  
+  return presaleMerkleRoot;
+}
+
+async function processZoraDropConfig(configPath, defaultAddress, fee) {
   const rawConfig = JSON.parse(fs.readFileSync(configPath));
   const maxSupply = rawConfig.editionSize;
-
-  // rawConfig.metadata.mintConfig = { maxSupply: maxSupply, phases: [] };
 
   const config = {
     name: rawConfig.name,
@@ -83,46 +116,12 @@ async function processZoraDropConfig(configPath, defaultAddress) {
   if(!_.isEmpty(rawConfig.saleConfig.presale?.whitelist)) {
     rawConfig.saleConfig.presale.whitelist.forEach(entry => entry.price = ethers.parseEther(entry.price).toString());
 
-    const { data:processWhitelistResposne } = await axios.post('https://allowlist.zora.co/allowlist', {
-      entries: rawConfig.saleConfig.presale.whitelist
-    });
-
-    if(!processWhitelistResposne.success) throw new Exception("Presale whiltelist process failed", JSON.stringify(processWhitelistResposne));
-  
+    const presaleMerkleRoot = await processWhitelist(rawConfig.saleConfig.presale.whitelist);
     const presaleStartTime = rawConfig.saleConfig.presale.startTime;
     const presaleEndTime = rawConfig.saleConfig.presale.endTime;
     config.saleConfig.presaleStart = presaleStartTime;
     config.saleConfig.presaleEnd = presaleEndTime;
-    config.saleConfig.presaleMerkleRoot = `0x${processWhitelistResposne.root}`;
-
-    // rawConfig.metadata.mintConfig.phases.push({
-    //   startTime: presaleStartTime,
-    //   endTime: presaleEndTime,
-    //   tx: {
-    //     method: "0x25024a2b",
-    //     params: [
-    //       {
-    //         kind: "QUANTITY",
-    //         name: "quantity",
-    //         abiType: "uint256"
-    //       },
-    //       {
-    //         kind: "QUANTITY",
-    //         name: "max_quantity",
-    //         abiType: "uint256"
-    //       },          {
-    //         kind: "QUANTITY",
-    //         name: "price_per_token",
-    //         abiType: "uint256"
-    //       },
-    //       {
-    //         kind: "MAPPING_RECIPIENT",
-    //         name: "proof",
-    //         abiType: "bytes32[]"
-    //       }
-    //     ]
-    //   }
-    // });
+    config.saleConfig.presaleMerkleRoot = presaleMerkleRoot;
   }
 
   // process public sale config
@@ -136,23 +135,6 @@ async function processZoraDropConfig(configPath, defaultAddress) {
     config.saleConfig.publicSaleEnd = publicSaleEndTime;
     config.saleConfig.publicSalePrice = publicSalePrice;
     config.saleConfig.maxSalePurchasePerAddress = maxPublicSalePerAddress;
-
-    // rawConfig.metadata.mintConfig.phases.push({
-    //   price: publicSalePrice,
-    //   startTime: publicSaleStartTime,
-    //   endTime: publicSaleEndTime,
-    //   maxMintsPerWallet: maxPublicSalePerAddress,
-    //   tx: {
-    //     method: "0xefef39a1",
-    //     params: [
-    //       {
-    //         kind: "QUANTITY",
-    //         name: "quantity",
-    //         abiType: "uint256"
-    //       }
-    //     ]
-    //   }
-    // });
   }
 
   // upload metadata to IFPS to create contract URI
@@ -179,9 +161,9 @@ async function processZoraDropConfig(configPath, defaultAddress) {
 // main function
 async function createZoraDrop() {
   const { chain_name, private_key, zora_drop_config_path:configPath } = getParamsForScript();
-  const { provider, deployer_address, zora_creator_proxy_contract:proxyContract } = createNetworkEntities(chain_name, private_key)
+  const { provider, deployer_address, zora_creator_proxy_contract:proxyContract, mint_fee_per_quantity:fee } = createNetworkEntities(chain_name, private_key)
 
-  const config = await processZoraDropConfig(configPath, deployer_address);
+  const config = await processZoraDropConfig(configPath, deployer_address, fee);
 
   const createResponse = await proxyContract.createDrop(
     config.name, 
@@ -201,12 +183,15 @@ async function createZoraDrop() {
   console.log("Transaction Hash:", transactionHash);
   await sleep(6000); // wait for transaction to be mined
   const transactionReceipt = await provider.getTransactionReceipt(transactionHash);
+  let collectionAddress;
   if(transactionReceipt) {
     console.log("Transaction status:", transactionReceipt.status === 1 ? "success" : "failed");
-    console.log("Collection contract address:", transactionReceipt.logs.find(log => log.index === 0).address.toLowerCase(), "\n");
+    collectionAddress = transactionReceipt.logs.find(log => log.index === 0).address.toLowerCase();
+    console.log("Collection contract address:", collectionAddress, "\n");
   } else {
     console.log("Cannot check status of the transaction.");
   }
+  fs.appendFileSync('created-collections.txt', collectionAddress + " " + transactionHash + "\n");
 }
 
 createZoraDrop()

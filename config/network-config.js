@@ -11,7 +11,8 @@ const getNetworkConfig = (chainName) => {
         "FACTORY_UPGRADE_GATE": "0x5f5CA4097fB1dA6F9C85Af43796421E2ab5A4D01",
         "ZORA_NFT_CREATOR_V1_IMPL": "0x76F495DcebEc4A4d4c5E488243fd4509A158656a",
         "ZORA_NFT_CREATOR_PROXY": "0xc1d364764D1a05bF7E10668146B2aB43C4966e00"
-      }
+      },
+      mint_fee_per_quantity: 0,
     }
     case "serenity": return {
       chain_id: 1236,
@@ -24,7 +25,8 @@ const getNetworkConfig = (chainName) => {
         "FACTORY_UPGRADE_GATE": "0x27f924A037e7b34971c8a565353E78cAab60D3B0",
         "ZORA_NFT_CREATOR_PROXY": "0x6Ff00F6B2120157fcA353fBe24D25536042197dF",
         "ZORA_NFT_CREATOR_V1_IMPL": "0xF0938d397956921b1fB326C7822259f575807d08"
-      }
+      },
+      mint_fee_per_quantity: 777000000000000,
     }
     case "sepolia": return {
       chain_id: 11155111,
