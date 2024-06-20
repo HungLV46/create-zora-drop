@@ -64,7 +64,11 @@ async function purchase() {
   const { chain_name, private_key, zora_drop_address:dropAddress, purchase_quantity } = getParamsForScript();
   const { provider, zora_drop_contract:dropContract } = createNetworkEntities(chain_name, private_key, dropAddress)
 
-  const createResponse = await dropContract.purchase(purchase_quantity);
+  const proofs = [
+    "0xbbd7c77df0fa18dbf6217a98dbfb2cc45e9482b513a02ed9332a7f8272e5176a",
+    "0x4e3616fd86fac205bd9dd6defbcc0737f52c78875420d23579b2ab7c9dc9b2b2"];
+
+  const createResponse = await dropContract.purchasePresale(1,2,0,proofs);
   
   // print results
   // console.log("======== PURCHASE RESULT ========");

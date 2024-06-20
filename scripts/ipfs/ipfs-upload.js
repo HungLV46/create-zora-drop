@@ -97,16 +97,16 @@ const uploadToIPFS = async (metadataObjects, localImageFolderPath, localAnimatio
 
 async function main() {
   const ipfsFoldername = process.argv[2];
-  const overwrite = process.argv[3] || false;
+  const maxSupply = parseInt(process.argv[3]);
+  const overwrite = process.argv[4] || false;
 
   if(!ipfsFoldername) throw new Exception(`Name of folder (used as IPFS upload destination) must be specified as the first argument of the script`);
-
 
   const metadataCSVFilePath = './scripts/ipfs/tokens-metadata.csv';
   const imagesFolderPath = './scripts/ipfs/images';
   const animationsFolderPath = './scripts/ipfs/animations';
 
-  const { metadataObjects, filenames } = await validateThenConvertCsv(metadataCSVFilePath, undefined, { reservedTokenIds: [], maxSupply: 50})
+  const { metadataObjects, filenames } = await validateThenConvertCsv(metadataCSVFilePath, undefined, { reservedTokenIds: [], maxSupply})
   
   const imageFilenames = fs.readdirSync(imagesFolderPath);
   validateImages(imageFilenames, filenames);

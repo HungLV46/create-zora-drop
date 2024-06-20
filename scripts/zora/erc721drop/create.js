@@ -56,13 +56,14 @@ function createNetworkEntities(chainName, deployerPrivateKey) {
 }
 
 // has side effect
-async function processWhitelist(whitelist) {
+async function processWhitelist(whitelist, fee) {
   // generate merkle proofs
   const merkleTree = makeTree(whitelist);
   const presaleMerkleRoot = merkleTree.root;
 
   const allowlist = await axios.get(`https://${process.env.GRAPHQL_DOMAIN}/api/rest/allowlist/${presaleMerkleRoot}`)
     .then(response => response.data.evmallowlists);
+
   // insert merkle proofs to db
   if(_.isEmpty(allowlist)) {
     console.log("Insert allowlist items")
@@ -116,7 +117,7 @@ async function processZoraDropConfig(configPath, defaultAddress, fee) {
   if(!_.isEmpty(rawConfig.saleConfig.presale?.whitelist)) {
     rawConfig.saleConfig.presale.whitelist.forEach(entry => entry.price = ethers.parseEther(entry.price).toString());
 
-    const presaleMerkleRoot = await processWhitelist(rawConfig.saleConfig.presale.whitelist);
+    const presaleMerkleRoot = await processWhitelist(rawConfig.saleConfig.presale.whitelist, fee);
     const presaleStartTime = rawConfig.saleConfig.presale.startTime;
     const presaleEndTime = rawConfig.saleConfig.presale.endTime;
     config.saleConfig.presaleStart = presaleStartTime;

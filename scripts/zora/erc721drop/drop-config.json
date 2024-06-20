@@ -1,64 +1,32 @@
 {
-  "name": "Test mint 01",
-  "symbol": "TM01",
-  "defaultAdmin": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
-  "editionSize": 50,
-  "royaltyBPS": 1000,
-  "fundsRecipient": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
-  "metadataURIBase": "ipfs://QmWSu1nxARKf7kPaQqFkHdfdYtWmDmfUr8RhLKoH4q42Wc/",
+  "name": "Immersion: Into the Aura Odyssey",
+  "symbol": "ITAO",
+  "defaultAdmin": "0x6993DF39F2b61c8B4fC59869a5AD61f71d34C8ad",
+  "editionSize": 100000,
+  "royaltyBPS": 0,
+  "fundsRecipient": "0x6993DF39F2b61c8B4fC59869a5AD61f71d34C8ad",
+  "metadataURIBase": "ipfs://QmPf5LawLS1ZVqFTSs7JhFD6yteKQLXxYMEYoc1PcKkhVj/",
   "saleConfig": {
     "presale": {
-      "startTime": 1717401265,
-      "endTime": 1915672248,
-      "whitelist": [
-        {
-          "user": "0xD3E70Ba6F42B97cCd97b7c3A8fBE990437095075",
-          "price": "0",
-          "maxCanMint": 2
-        },
-        {
-          "user": "0x2Dadb91AAa9e5e762f47e67bD8c75B14fF8061D4",
-          "price": "0",
-          "maxCanMint": 2
-        },
-        {
-          "user": "0x583A4a44A1EA974c1032383De0F84eDC43e2e002",
-          "maxCanMint": 2,
-          "price": "0"
-        },
-        {
-          "user": "0x256b9D4598804221cCD4A6a236034238EF750d4b",
-          "maxCanMint": 2,
-          "price": "0"
-        },
-        {
-          "user": "0x6935af443F349F506a439C034f95f8219C339bAF",
-          "maxCanMint": 2,
-          "price": "0"
-        },
-        {
-          "user": "0x5606b4eA93F696Dd82Ca983BAF5723d00729f127",
-          "maxCanMint": 2,
-          "price": "0"
-        }
-      ]
+      "startTime": 0,
+      "endTime": 0
     },
     "publicSale": {
-      "startTime": 1915672249,
-      "endTime": 1925672248,
-      "publicSalePrice": "0.01",
-      "maxSalePurchasePerAddress": 0
+      "startTime": 1718611200,
+      "endTime": 1726387200,
+      "publicSalePrice": "0",
+      "maxSalePurchasePerAddress": 1
     }
   },
   "metadata": {
-    "name": "Test mint 01",
-    "image_url": "ipfs://QmR1aJrEQf1bPR5sRsqNVtzDGPR2Ych4HDbYdKBhPDaCS2/Logo.jpg",
-    "banner_image_url": "ipfs://QmR1aJrEQf1bPR5sRsqNVtzDGPR2Ych4HDbYdKBhPDaCS2/banner.jpg",
-    "description": "Coffee painting is a unique art form that involves using coffee as a medium to create images and designs.",
-    "discord": "https://discord.gg/NpRfGZtZ",
-    "twitter": "https://twitter.com/AuraNetworkHQ",
-    "twitter_username": "AuraNetworkHQ",
-    "telegram": "https://t.me/auranwchat",
-    "website": "https://evm.serenity.seekhype.io/serenity"
+    "name": "Immersion: Into the Aura Odyssey",
+    "image_url": "https://ipfs-gw.aura.network/ipfs/QmSvGbe8SSjyL9A5hSEnA4biUsy2QYomj5u9tEZ4Lfic28/logo.png",
+    "banner_image_url": "https://ipfs-gw.aura.network/ipfs/QmSvGbe8SSjyL9A5hSEnA4biUsy2QYomj5u9tEZ4Lfic28/banner.png",
+    "description": "The Immersion: Into Aura Odyssey Collection is a collaboration between Micro3 and Aura Network, marking the debut of Aura EVM NFT. This collection symbolizes innovation and creativity in the NFT and SocialFi space. Mint your NFTs and embark on this extraordinary journey with us!",
+    "discord": "https://discord.com/invite/NGCnttF9Hy",
+    "twitter": "https://x.com/Micro3io",
+    "twitter_username": "Micro3io",
+    "website": "https://micro3.io",
+    "creator": "0x6993DF39F2b61c8B4fC59869a5AD61f71d34C8ad"
   }
 }

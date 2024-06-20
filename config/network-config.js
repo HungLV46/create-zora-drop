@@ -1,5 +1,13 @@
 const getNetworkConfig = (chainName) => {
   switch(chainName) {
+    case "xstaxy": return {
+      chain_id: 6322,
+      json_rpc_url: "https://jsonrpc.aura.network",
+      zora_contract_addresses: {
+        "ZORA_NFT_CREATOR_PROXY": "0xdc99E17F7386E5148F585D7bAA4E1c482F4017F7"
+      },
+      mint_fee_per_quantity: 0,
+    }
     case "euphoria": return {
       chain_id: 6321,
       json_rpc_url: "https://jsonrpc.euphoria.aura.network",
@@ -18,15 +26,28 @@ const getNetworkConfig = (chainName) => {
       chain_id: 1236,
       json_rpc_url: "https://jsonrpc.serenity.aura.network",
       zora_contract_addresses: {
-        "DROP_METADATA_RENDERER": "0xeaE7Eb86dF7D166d7454213FF745ECdf0e96e46f",
-        "EDITION_METADATA_RENDERER": "0x36eCe7432E052C64a18E49b7C456463AC0AbAc57",
-        "ERC721DROP_IMPL": "0x03D389c532e2b0Aa33Cd302f1e147843245B177a",
-        "ERC721DROP_IMPL_VERSION": 14,
-        "FACTORY_UPGRADE_GATE": "0x27f924A037e7b34971c8a565353E78cAab60D3B0",
-        "ZORA_NFT_CREATOR_PROXY": "0x6Ff00F6B2120157fcA353fBe24D25536042197dF",
-        "ZORA_NFT_CREATOR_V1_IMPL": "0xF0938d397956921b1fB326C7822259f575807d08"
+        // "DROP_METADATA_RENDERER": "0xeaE7Eb86dF7D166d7454213FF745ECdf0e96e46f",
+        // "EDITION_METADATA_RENDERER": "0x36eCe7432E052C64a18E49b7C456463AC0AbAc57",
+        // "ERC721DROP_IMPL": "0x03D389c532e2b0Aa33Cd302f1e147843245B177a",
+        // "ERC721DROP_IMPL_VERSION": 14,
+        // "FACTORY_UPGRADE_GATE": "0x27f924A037e7b34971c8a565353E78cAab60D3B0",
+        "ZORA_NFT_CREATOR_PROXY": "0xf69Fd9D27c09778CEB0e82E297496b49cFA0f994",
+        // "ZORA_NFT_CREATOR_V1_IMPL": "0xF0938d397956921b1fB326C7822259f575807d08"
       },
-      mint_fee_per_quantity: 777000000000000,
+      mint_fee_per_quantity: 0,
+    }
+    case "devnet": return {
+      chain_id: 1235,
+      json_rpc_url: "https://jsonrpc.dev.aura.network",
+      zora_contract_addresses: {
+        "ZORA_NFT_CREATOR_PROXY": "0xaa8ebaC64cA6c0B016F0EBCD41fff17673aF29bA",
+        "MODULE_MANAGER": "0x6B1Cc558DA2f0d909aD16FA29F2D74bF7A8cA6B4",
+        "OFFERS_OMNIBUS": "0x14511dEfE1fbc147b7364d3A5A3ED1179bd0c707",
+        "ERC20_TRANSFER_HELPER": "0xbeA9f83Dc816f0Df3F7fB43a288BE9fF211C3E7A",
+        "ERC721_TRANSFER_HELPER": "0x9f075Deab9a7433f0A5541d235a57db1cA491E0a",
+        "WETH": "0x7C258D32e0C5ADda30d18194870b56A38E2EBBbC"
+      },
+      mint_fee_per_quantity: 0,
     }
     case "sepolia": return {
       chain_id: 11155111,

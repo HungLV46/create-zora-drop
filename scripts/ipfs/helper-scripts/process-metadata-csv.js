@@ -1,5 +1,6 @@
 const { readCSV } = require('../../util');
 const _ = require('lodash');
+const { ValidationError } = require('../../util');
 
 const METADATA_CSV_FORMAT = {
   ONE_TO_ONE: 'one_to_one',
