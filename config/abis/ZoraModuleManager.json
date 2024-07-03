@@ -1,1 +1,597 @@
-{"abi":[{"type":"constructor","inputs":[{"name":"_registrar","type":"address","internalType":"address"},{"name":"_feeToken","type":"address","internalType":"address"}],"stateMutability":"nonpayable"},{"type":"function","name":"isModuleApproved","inputs":[{"name":"_user","type":"address","internalType":"address"},{"name":"_module","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"view"},{"type":"function","name":"moduleFeeToken","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contract ZoraProtocolFeeSettings"}],"stateMutability":"view"},{"type":"function","name":"moduleRegistered","inputs":[{"name":"","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"view"},{"type":"function","name":"registerModule","inputs":[{"name":"_module","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"registrar","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"setApprovalForModule","inputs":[{"name":"_module","type":"address","internalType":"address"},{"name":"_approved","type":"bool","internalType":"bool"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setApprovalForModuleBySig","inputs":[{"name":"_module","type":"address","internalType":"address"},{"name":"_user","type":"address","internalType":"address"},{"name":"_approved","type":"bool","internalType":"bool"},{"name":"_deadline","type":"uint256","internalType":"uint256"},{"name":"_v","type":"uint8","internalType":"uint8"},{"name":"_r","type":"bytes32","internalType":"bytes32"},{"name":"_s","type":"bytes32","internalType":"bytes32"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setBatchApprovalForModules","inputs":[{"name":"_modules","type":"address[]","internalType":"address[]"},{"name":"_approved","type":"bool","internalType":"bool"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setRegistrar","inputs":[{"name":"_registrar","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"sigNonces","inputs":[{"name":"","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},{"type":"function","name":"userApprovals","inputs":[{"name":"","type":"address","internalType":"address"},{"name":"","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"view"},{"type":"event","name":"ModuleApprovalSet","inputs":[{"name":"user","type":"address","indexed":true,"internalType":"address"},{"name":"module","type":"address","indexed":true,"internalType":"address"},{"name":"approved","type":"bool","indexed":false,"internalType":"bool"}],"anonymous":false},{"type":"event","name":"ModuleRegistered","inputs":[{"name":"module","type":"address","indexed":true,"internalType":"address"}],"anonymous":false},{"type":"event","name":"RegistrarChanged","inputs":[{"name":"newRegistrar","type":"address","indexed":true,"internalType":"address"}],"anonymous":false}],"bytecode":{"object":"0x600460c052635a4f524160e01b60e0527f8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f6101209081527fce58904c16226b928edd08e5ee91745b8b749acafb24ab016c32bb2f06593481610140527f2a80e1ef1d7842f27f2e6be0972bb708b9a135c38860dbe73c27c3486c34f4de610160524661018052306101a05260a06101008190526101c060405290206080523480156100a957600080fd5b5060405161101d38038061101d8339810160408190526100c891610177565b6001600160a01b0382166101365760405162461bcd60e51b815260206004820152602b60248201527f5a4d4d3a3a6d757374207365742072656769737472617220746f206e6f6e2d7a60448201526a65726f206164647265737360a81b606482015260840160405180910390fd5b600080546001600160a01b0319166001600160a01b039384161790551660a0526101aa565b80516001600160a01b038116811461017257600080fd5b919050565b6000806040838503121561018a57600080fd5b6101938361015b565b91506101a16020840161015b565b90509250929050565b60805160a051610e476101d6600039600081816101cc01526107a1015260006103e60152610e476000f3fe608060405234801561001057600080fd5b50600436106100c95760003560e01c80639e4a400c11610081578063f990ccd71161005b578063f990ccd714610214578063faab9d3914610242578063fbef5f521461025557600080fd5b80639e4a400c146101c7578063ad64ae4b146101ee578063bcb11ad31461020157600080fd5b80632b20e397116100b25780632b20e3971461012657806337436c981461016b5780639dbb83a7146101b457600080fd5b8063152c1b5b146100ce5780631be50153146100e3575b600080fd5b6100e16100dc366004610bac565b610278565b005b6101116100f1366004610bdf565b600160209081526000928352604080842090915290825290205460ff1681565b60405190151581526020015b60405180910390f35b6000546101469073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161011d565b610111610179366004610bdf565b73ffffffffffffffffffffffffffffffffffffffff918216600090815260016020908152604080832093909416825291909152205460ff1690565b6100e16101c2366004610c09565b610287565b6101467f000000000000000000000000000000000000000000000000000000000000000081565b6100e16101fc366004610c83565b6105bc565b6100e161020f366004610cd4565b610855565b610234610222366004610c83565b60036020526000908152604090205481565b60405190815260200161011d565b6100e1610250366004610c83565b610894565b610111610263366004610c83565b60026020526000908152604090205460ff1681565b610283823383610a4a565b5050565b8315806102945750428410155b610325576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602f60248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206460448201527f6561646c696e652065787069726564000000000000000000000000000000000060648201526084015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff868116600081815260036020908152604080832080546001810190915581517f8413132cc7aa5bd2ce1a1b142a3f09e2baeda86addf4f9a5dacd4679f56e7cec81850152958d16868301526060860194909452891515608086015260a0850189905260c0808601949094528051808603909401845260e08501905282519201919091207f19010000000000000000000000000000000000000000000000000000000000006101008401527f00000000000000000000000000000000000000000000000000000000000000006101028401526101228301529061014201604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08184030181528282528051602091820120600080855291840180845281905260ff88169284019290925260608301869052608083018590529092509060019060a0016020604051602081039080840390855afa15801561049f573d6000803e3d6000fd5b50506040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0015191505073ffffffffffffffffffffffffffffffffffffffff81161580159061051a57508773ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16145b6105a6576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603060248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206960448201527f6e76616c6964207369676e617475726500000000000000000000000000000000606482015260840161031c565b6105b1898989610a4a565b505050505050505050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610662576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff1615610718576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602d60248201527f5a4d4d3a3a72656769737465724d6f64756c65206d6f64756c6520616c72656160448201527f6479207265676973746572656400000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81811660008181526002602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055905490517fee1fe2ad000000000000000000000000000000000000000000000000000000008152908316600482015260248101919091527f00000000000000000000000000000000000000000000000000000000000000009091169063ee1fe2ad906044016020604051808303816000875af11580156107ec573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108109190610dc9565b5060405173ffffffffffffffffffffffffffffffffffffffff8216907f0961fbae397458c42f3f186eaabee4a989aafde93ac5d8d122cff462423a241e90600090a250565b815160005b8181101561088e5761088684828151811061087757610877610de2565b60200260200101513385610a4a565b60010161085a565b50505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461093a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81166109dd576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603860248201527f5a4d4d3a3a736574526567697374726172206d7573742073657420726567697360448201527f7472617220746f206e6f6e2d7a65726f20616464726573730000000000000000606482015260840161031c565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff8316908117825560405190917f6e4c52923c1e70447ecc72995ce26bf2400d9c26b1a7c21ab433e7caff8d40a291a250565b73ffffffffffffffffffffffffffffffffffffffff831660009081526002602052604090205460ff16610ad9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601e60248201527f5a4d4d3a3a6d7573742062652072656769737465726564206d6f64756c650000604482015260640161031c565b73ffffffffffffffffffffffffffffffffffffffff82811660009081526001602090815260408083209387168084529382529182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016851515908117909155915191825233917fae7dcf035464e268e998bd5ac0ac831ce45a68f2c2fbd438d6c1c5965eba79f2910160405180910390a3505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610b9757600080fd5b919050565b80358015158114610b9757600080fd5b60008060408385031215610bbf57600080fd5b610bc883610b73565b9150610bd660208401610b9c565b90509250929050565b60008060408385031215610bf257600080fd5b610bfb83610b73565b9150610bd660208401610b73565b600080600080600080600060e0888a031215610c2457600080fd5b610c2d88610b73565b9650610c3b60208901610b73565b9550610c4960408901610b9c565b945060608801359350608088013560ff81168114610c6657600080fd5b9699959850939692959460a0840135945060c09093013592915050565b600060208284031215610c9557600080fd5b610c9e82610b73565b9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60008060408385031215610ce757600080fd5b823567ffffffffffffffff80821115610cff57600080fd5b818501915085601f830112610d1357600080fd5b8135602082821115610d2757610d27610ca5565b8160051b6040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0603f83011681018181108682111715610d6a57610d6a610ca5565b604052928352818301935084810182019289841115610d8857600080fd5b948201945b83861015610dad57610d9e86610b73565b85529482019493820193610d8d565b9650610dbc9050878201610b9c565b9450505050509250929050565b600060208284031215610ddb57600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fdfea264697066735822122056cf7110f69d55909945a385f5512dd6aaade99485b1dbb88c7d626f09c18deb64736f6c634300080a0033","sourceMap":"899:13:0:-:0;303:13538;899:13;-1:-1:-1;;;899:13:0;;780:95;756:249;273:25:11;;;889:24:0;314:18:11;307:34;927:14:0;357:18:11;350:34;955:13:0;400:18:11;393:34;990:4:0;443:19:11;436:61;756:249:0;899:13;756:249;;;245:19:11;303:13538:0;756:249;737:274;;-1:-1:-1;684:327:0;2723:242;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;2792:24:0;;2784:80;;;;-1:-1:-1;;;2784:80:0;;1190:2:11;2784:80:0;;;1172:21:11;1229:2;1209:18;;;1202:30;1268:34;1248:18;;;1241:62;-1:-1:-1;;;1319:18:11;;;1312:41;1370:19;;2784:80:0;;;;;;;;2875:9;:22;;-1:-1:-1;;;;;;2875:22:0;-1:-1:-1;;;;;2875:22:0;;;;;;2907:51;;;303:13538;;508:177:11;587:13;;-1:-1:-1;;;;;629:31:11;;619:42;;609:70;;675:1;672;665:12;609:70;508:177;;;:::o;690:293::-;769:6;777;830:2;818:9;809:7;805:23;801:32;798:52;;;846:1;843;836:12;798:52;869:40;899:9;869:40;:::i;:::-;859:50;;928:49;973:2;962:9;958:18;928:49;:::i;:::-;918:59;;690:293;;;;;:::o;988:407::-;303:13538:0;;;;;;;;;;;;;;;;;;;;;;;","linkReferences":{}},"deployedBytecode":{"object":"0x608060405234801561001057600080fd5b50600436106100c95760003560e01c80639e4a400c11610081578063f990ccd71161005b578063f990ccd714610214578063faab9d3914610242578063fbef5f521461025557600080fd5b80639e4a400c146101c7578063ad64ae4b146101ee578063bcb11ad31461020157600080fd5b80632b20e397116100b25780632b20e3971461012657806337436c981461016b5780639dbb83a7146101b457600080fd5b8063152c1b5b146100ce5780631be50153146100e3575b600080fd5b6100e16100dc366004610bac565b610278565b005b6101116100f1366004610bdf565b600160209081526000928352604080842090915290825290205460ff1681565b60405190151581526020015b60405180910390f35b6000546101469073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161011d565b610111610179366004610bdf565b73ffffffffffffffffffffffffffffffffffffffff918216600090815260016020908152604080832093909416825291909152205460ff1690565b6100e16101c2366004610c09565b610287565b6101467f000000000000000000000000000000000000000000000000000000000000000081565b6100e16101fc366004610c83565b6105bc565b6100e161020f366004610cd4565b610855565b610234610222366004610c83565b60036020526000908152604090205481565b60405190815260200161011d565b6100e1610250366004610c83565b610894565b610111610263366004610c83565b60026020526000908152604090205460ff1681565b610283823383610a4a565b5050565b8315806102945750428410155b610325576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602f60248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206460448201527f6561646c696e652065787069726564000000000000000000000000000000000060648201526084015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff868116600081815260036020908152604080832080546001810190915581517f8413132cc7aa5bd2ce1a1b142a3f09e2baeda86addf4f9a5dacd4679f56e7cec81850152958d16868301526060860194909452891515608086015260a0850189905260c0808601949094528051808603909401845260e08501905282519201919091207f19010000000000000000000000000000000000000000000000000000000000006101008401527f00000000000000000000000000000000000000000000000000000000000000006101028401526101228301529061014201604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08184030181528282528051602091820120600080855291840180845281905260ff88169284019290925260608301869052608083018590529092509060019060a0016020604051602081039080840390855afa15801561049f573d6000803e3d6000fd5b50506040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0015191505073ffffffffffffffffffffffffffffffffffffffff81161580159061051a57508773ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16145b6105a6576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603060248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206960448201527f6e76616c6964207369676e617475726500000000000000000000000000000000606482015260840161031c565b6105b1898989610a4a565b505050505050505050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610662576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff1615610718576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602d60248201527f5a4d4d3a3a72656769737465724d6f64756c65206d6f64756c6520616c72656160448201527f6479207265676973746572656400000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81811660008181526002602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055905490517fee1fe2ad000000000000000000000000000000000000000000000000000000008152908316600482015260248101919091527f00000000000000000000000000000000000000000000000000000000000000009091169063ee1fe2ad906044016020604051808303816000875af11580156107ec573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108109190610dc9565b5060405173ffffffffffffffffffffffffffffffffffffffff8216907f0961fbae397458c42f3f186eaabee4a989aafde93ac5d8d122cff462423a241e90600090a250565b815160005b8181101561088e5761088684828151811061087757610877610de2565b60200260200101513385610a4a565b60010161085a565b50505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461093a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81166109dd576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603860248201527f5a4d4d3a3a736574526567697374726172206d7573742073657420726567697360448201527f7472617220746f206e6f6e2d7a65726f20616464726573730000000000000000606482015260840161031c565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff8316908117825560405190917f6e4c52923c1e70447ecc72995ce26bf2400d9c26b1a7c21ab433e7caff8d40a291a250565b73ffffffffffffffffffffffffffffffffffffffff831660009081526002602052604090205460ff16610ad9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601e60248201527f5a4d4d3a3a6d7573742062652072656769737465726564206d6f64756c650000604482015260640161031c565b73ffffffffffffffffffffffffffffffffffffffff82811660009081526001602090815260408083209387168084529382529182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016851515908117909155915191825233917fae7dcf035464e268e998bd5ac0ac831ce45a68f2c2fbd438d6c1c5965eba79f2910160405180910390a3505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610b9757600080fd5b919050565b80358015158114610b9757600080fd5b60008060408385031215610bbf57600080fd5b610bc883610b73565b9150610bd660208401610b9c565b90509250929050565b60008060408385031215610bf257600080fd5b610bfb83610b73565b9150610bd660208401610b73565b600080600080600080600060e0888a031215610c2457600080fd5b610c2d88610b73565b9650610c3b60208901610b73565b9550610c4960408901610b9c565b945060608801359350608088013560ff81168114610c6657600080fd5b9699959850939692959460a0840135945060c09093013592915050565b600060208284031215610c9557600080fd5b610c9e82610b73565b9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60008060408385031215610ce757600080fd5b823567ffffffffffffffff80821115610cff57600080fd5b818501915085601f830112610d1357600080fd5b8135602082821115610d2757610d27610ca5565b8160051b6040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0603f83011681018181108682111715610d6a57610d6a610ca5565b604052928352818301935084810182019289841115610d8857600080fd5b948201945b83861015610dad57610d9e86610b73565b85529482019493820193610d8d565b9650610dbc9050878201610b9c565b9450505050509250929050565b600060208284031215610ddb57600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fdfea264697066735822122056cf7110f69d55909945a385f5512dd6aaade99485b1dbb88c7d626f09c18deb64736f6c634300080a0033","sourceMap":"303:13538:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4460:140;;;;;;:::i;:::-;;:::i;:::-;;1377:65;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1069:14:11;;1062:22;1044:41;;1032:2;1017:18;1377:65:0;;;;;;;;1226:24;;;;;;;;;;;;1272:42:11;1260:55;;;1242:74;;1230:2;1215:18;1226:24:0;1096:226:11;3249:140:0;;;;;;:::i;:::-;3353:20;;;;3330:4;3353:20;;;:13;:20;;;;;;;;:29;;;;;;;;;;;;;;;3249:140;8546:1152;;;;;;:::i;:::-;;:::i;1100:55::-;;;;;11734:296;;;;;;:::i;:::-;;:::i;6293:568::-;;;;;;:::i;:::-;;:::i;1670:44::-;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;4068:25:11;;;4056:2;4041:18;1670:44:0;3922:177:11;13075:249:0;;;;;;:::i;:::-;;:::i;1547:48::-;;;;;;:::i;:::-;;;;;;;;;;;;;;;;4460:140;4540:53;4562:7;4571:10;4583:9;4540:21;:53::i;:::-;4460:140;;:::o;8546:1152::-;8769:14;;;:46;;;8800:15;8787:9;:28;;8769:46;8761:106;;;;;;;4306:2:11;8761:106:0;;;4288:21:11;4345:2;4325:18;;;4318:30;4384:34;4364:18;;;4357:62;4455:17;4435:18;;;4428:45;4490:19;;8761:106:0;;;;;;;;;9317:16;;;;8878:14;9317:16;;;:9;:16;;;;;;;;:18;;;;;;;;9242:94;;566:66;9242:94;;;4801:25:11;4923:15;;;4903:18;;;4896:43;4955:18;;;4948:43;;;;5034:14;;5027:22;5007:18;;;5000:50;5066:19;;;5059:35;;;5110:19;;;;5103:35;;;;9242:94:0;;;;;;;;;;4773:19:11;;;9242:94:0;;9207:151;;;;;;;;5419:66:11;9091:285:0;;;5407:79:11;9161:24:0;5502:11:11;;;5495:27;5538:12;;;5531:28;8878:14:0;5575:12:11;;9091:285:0;;;;;;;;;;;;;9064:326;;9091:285;9064:326;;;;9411:24;9438:29;;;;;;;;;5825:25:11;;;5898:4;5886:17;;5866:18;;;5859:45;;;;5920:18;;;5913:34;;;5963:18;;;5956:34;;;9064:326:0;;-1:-1:-1;9411:24:0;9438:29;;5797:19:11;;9438:29:0;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;9438:29:0;;;;;;-1:-1:-1;;9499:30:0;;;;;;;:59;;;9553:5;9533:25;;:16;:25;;;9499:59;9478:154;;;;;;;6203:2:11;9478:154:0;;;6185:21:11;6242:2;6222:18;;;6215:30;6281:34;6261:18;;;6254:62;6352:18;6332;;;6325:46;6388:19;;9478:154:0;6001:412:11;9478:154:0;9643:48;9665:7;9674:5;9681:9;9643:21;:48::i;:::-;8751:947;;8546:1152;;;;;;;:::o;11734:296::-;1842:9;;;;1828:10;:23;1820:72;;;;;;;6620:2:11;1820:72:0;;;6602:21:11;6659:2;6639:18;;;6632:30;6698:34;6678:18;;;6671:62;6769:6;6749:18;;;6742:34;6793:19;;1820:72:0;6418:400:11;1820:72:0;11815:25:::1;::::0;::::1;;::::0;;;:16:::1;:25;::::0;;;;;::::1;;11814:26;11806:84;;;::::0;::::1;::::0;;7025:2:11;11806:84:0::1;::::0;::::1;7007:21:11::0;7064:2;7044:18;;;7037:30;7103:34;7083:18;;;7076:62;7174:15;7154:18;;;7147:43;7207:19;;11806:84:0::1;6823:409:11::0;11806:84:0::1;11901:25;::::0;;::::1;;::::0;;;:16:::1;:25;::::0;;;;;:32;;;::::1;11929:4;11901:32;::::0;;11963:9;;11943:39;;;;;11963:9;;::::1;11943:39;::::0;::::1;7472:34:11::0;7522:18;;;7515:43;;;;11943:14:0::1;:19:::0;;::::1;::::0;::::1;::::0;7384:18:11;;11943:39:0::1;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1::0;11998:25:0::1;::::0;::::1;::::0;::::1;::::0;::::1;::::0;;;::::1;11734:296:::0;:::o;6293:568::-;6467:15;;6446:18;6530:325;6554:10;6550:1;:14;6530:325;;;6654:57;6676:8;6685:1;6676:11;;;;;;;;:::i;:::-;;;;;;;6689:10;6701:9;6654:21;:57::i;:::-;6827:3;;6530:325;;;;6379:482;6293:568;;:::o;13075:249::-;1842:9;;;;1828:10;:23;1820:72;;;;;;;6620:2:11;1820:72:0;;;6602:21:11;6659:2;6639:18;;;6632:30;6698:34;6678:18;;;6671:62;6769:6;6749:18;;;6742:34;6793:19;;1820:72:0;6418:400:11;1820:72:0;13156:24:::1;::::0;::::1;13148:93;;;::::0;::::1;::::0;;8149:2:11;13148:93:0::1;::::0;::::1;8131:21:11::0;8188:2;8168:18;;;8161:30;8227:34;8207:18;;;8200:62;8298:26;8278:18;;;8271:54;8342:19;;13148:93:0::1;7947:420:11::0;13148:93:0::1;13251:9;:22:::0;;;::::1;;::::0;::::1;::::0;;::::1;::::0;;13289:28:::1;::::0;13251:22;;13289:28:::1;::::0;::::1;13075:249:::0;:::o;13550:289::-;13655:25;;;;;;;:16;:25;;;;;;;;13647:68;;;;;;;8574:2:11;13647:68:0;;;8556:21:11;8613:2;8593:18;;;8586:30;8652:32;8632:18;;;8625:60;8702:18;;13647:68:0;8372:354:11;13647:68:0;13726:20;;;;;;;;:13;:20;;;;;;;;:29;;;;;;;;;;;;;:41;;;;;;;;;;;;;13783:49;;1044:41:11;;;13801:10:0;;13783:49;;1017:18:11;13783:49:0;;;;;;;13550:289;;;:::o;14:196:11:-;82:20;;142:42;131:54;;121:65;;111:93;;200:1;197;190:12;111:93;14:196;;;:::o;215:160::-;280:20;;336:13;;329:21;319:32;;309:60;;365:1;362;355:12;380:254;445:6;453;506:2;494:9;485:7;481:23;477:32;474:52;;;522:1;519;512:12;474:52;545:29;564:9;545:29;:::i;:::-;535:39;;593:35;624:2;613:9;609:18;593:35;:::i;:::-;583:45;;380:254;;;;;:::o;639:260::-;707:6;715;768:2;756:9;747:7;743:23;739:32;736:52;;;784:1;781;774:12;736:52;807:29;826:9;807:29;:::i;:::-;797:39;;855:38;889:2;878:9;874:18;855:38;:::i;1327:693::-;1435:6;1443;1451;1459;1467;1475;1483;1536:3;1524:9;1515:7;1511:23;1507:33;1504:53;;;1553:1;1550;1543:12;1504:53;1576:29;1595:9;1576:29;:::i;:::-;1566:39;;1624:38;1658:2;1647:9;1643:18;1624:38;:::i;:::-;1614:48;;1681:35;1712:2;1701:9;1697:18;1681:35;:::i;:::-;1671:45;;1763:2;1752:9;1748:18;1735:32;1725:42;;1817:3;1806:9;1802:19;1789:33;1862:4;1855:5;1851:16;1844:5;1841:27;1831:55;;1882:1;1879;1872:12;1831:55;1327:693;;;;-1:-1:-1;1327:693:11;;;;1905:5;1957:3;1942:19;;1929:33;;-1:-1:-1;2009:3:11;1994:19;;;1981:33;;1327:693;-1:-1:-1;;1327:693:11:o;2287:186::-;2346:6;2399:2;2387:9;2378:7;2374:23;2370:32;2367:52;;;2415:1;2412;2405:12;2367:52;2438:29;2457:9;2438:29;:::i;:::-;2428:39;2287:186;-1:-1:-1;;;2287:186:11:o;2478:184::-;2530:77;2527:1;2520:88;2627:4;2624:1;2617:15;2651:4;2648:1;2641:15;2667:1250;2757:6;2765;2818:2;2806:9;2797:7;2793:23;2789:32;2786:52;;;2834:1;2831;2824:12;2786:52;2874:9;2861:23;2903:18;2944:2;2936:6;2933:14;2930:34;;;2960:1;2957;2950:12;2930:34;2998:6;2987:9;2983:22;2973:32;;3043:7;3036:4;3032:2;3028:13;3024:27;3014:55;;3065:1;3062;3055:12;3014:55;3101:2;3088:16;3123:4;3146:2;3142;3139:10;3136:36;;;3152:18;;:::i;:::-;3198:2;3195:1;3191:10;3230:2;3224:9;3289:66;3284:2;3280;3276:11;3272:84;3264:6;3260:97;3407:6;3395:10;3392:22;3387:2;3375:10;3372:18;3369:46;3366:72;;;3418:18;;:::i;:::-;3454:2;3447:22;3504:18;;;3538:15;;;;-1:-1:-1;3580:11:11;;;3576:20;;;3608:19;;;3605:39;;;3640:1;3637;3630:12;3605:39;3664:11;;;;3684:148;3700:6;3695:3;3692:15;3684:148;;;3766:23;3785:3;3766:23;:::i;:::-;3754:36;;3717:12;;;;3810;;;;3684:148;;;3851:6;-1:-1:-1;3876:35:11;;-1:-1:-1;3892:18:11;;;3876:35;:::i;:::-;3866:45;;;;;;2667:1250;;;;;:::o;7569:184::-;7639:6;7692:2;7680:9;7671:7;7667:23;7663:32;7660:52;;;7708:1;7705;7698:12;7660:52;-1:-1:-1;7731:16:11;;7569:184;-1:-1:-1;7569:184:11:o;7758:::-;7810:77;7807:1;7800:88;7907:4;7904:1;7897:15;7931:4;7928:1;7921:15","linkReferences":{},"immutableReferences":{"34":[{"start":998,"length":32}],"38":[{"start":460,"length":32},{"start":1953,"length":32}]}},"methodIdentifiers":{"isModuleApproved(address,address)":"37436c98","moduleFeeToken()":"9e4a400c","moduleRegistered(address)":"fbef5f52","registerModule(address)":"ad64ae4b","registrar()":"2b20e397","setApprovalForModule(address,bool)":"152c1b5b","setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)":"9dbb83a7","setBatchApprovalForModules(address[],bool)":"bcb11ad3","setRegistrar(address)":"faab9d39","sigNonces(address)":"f990ccd7","userApprovals(address,address)":"1be50153"},"rawMetadata":"{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_registrar\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feeToken\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ModuleApprovalSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newRegistrar\",\"type\":\"address\"}],\"name\":\"RegistrarChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"isModuleApproved\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"moduleFeeToken\",\"outputs\":[{\"internalType\":\"contract ZoraProtocolFeeSettings\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"moduleRegistered\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"registerModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registrar\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"_deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"_v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"_r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"_s\",\"type\":\"bytes32\"}],\"name\":\"setApprovalForModuleBySig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_modules\",\"type\":\"address[]\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"}],\"name\":\"setBatchApprovalForModules\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_registrar\",\"type\":\"address\"}],\"name\":\"setRegistrar\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"sigNonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userApprovals\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"tbtstl <t@zora.co>\",\"events\":{\"ModuleApprovalSet(address,address,bool)\":{\"params\":{\"approved\":\"Whether the user added or removed approval\",\"module\":\"The address of the module\",\"user\":\"The address of the user\"}},\"ModuleRegistered(address)\":{\"params\":{\"module\":\"The address of the module\"}},\"RegistrarChanged(address)\":{\"params\":{\"newRegistrar\":\"The address of the new registrar\"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_feeToken\":\"The module fee token contract to mint from upon module registration\",\"_registrar\":\"The initial registrar for the manager\"}},\"isModuleApproved(address,address)\":{\"params\":{\"_module\":\"The module to check approvals for\",\"_user\":\"The user to check approvals for\"},\"returns\":{\"_0\":\"True if the module has been approved by the user, false otherwise\"}},\"registerModule(address)\":{\"params\":{\"_module\":\"The address of the module\"}},\"setApprovalForModule(address,bool)\":{\"params\":{\"_approved\":\"A boolean, whether or not to approve a module\",\"_module\":\"The module to approve\"}},\"setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"params\":{\"_approved\":\"A boolean, whether or not to approve a module\",\"_deadline\":\"The deadline at which point the given signature expires\",\"_module\":\"The module to approve\",\"_r\":\"The first 64 bytes of the signature\",\"_s\":\"Bytes 64-128 of the signature\",\"_user\":\"The user to approve the module for\",\"_v\":\"The 129th byte and chain ID of the signature\"}},\"setBatchApprovalForModules(address[],bool)\":{\"params\":{\"_approved\":\"A boolean, whether or not to approve the modules\",\"_modules\":\"The list of module addresses to set approvals for\"}},\"setRegistrar(address)\":{\"params\":{\"_registrar\":\"the address of the new registrar\"}}},\"stateVariables\":{\"SIGNED_APPROVAL_TYPEHASH\":{\"details\":\"keccak256(\\\"SignedApproval(address module,address user,bool approved,uint256 deadline,uint256 nonce)\\\")\"},\"moduleRegistered\":{\"details\":\"Module address => Registered\"},\"userApprovals\":{\"details\":\"User address => Module address => Approved\"}},\"title\":\"ZoraModuleManager\",\"version\":1},\"userdoc\":{\"events\":{\"ModuleApprovalSet(address,address,bool)\":{\"notice\":\"Emitted when a user's module approval is updated\"},\"ModuleRegistered(address)\":{\"notice\":\"Emitted when a module is registered\"},\"RegistrarChanged(address)\":{\"notice\":\"Emitted when the registrar address is updated\"}},\"kind\":\"user\",\"methods\":{\"isModuleApproved(address,address)\":{\"notice\":\"Returns true if the user has approved a given module, false otherwise\"},\"moduleFeeToken()\":{\"notice\":\"The module fee NFT contract to mint from upon module registration\"},\"moduleRegistered(address)\":{\"notice\":\"Mapping of modules to registered status\"},\"registerModule(address)\":{\"notice\":\"Registers a module\"},\"registrar()\":{\"notice\":\"The registrar address that can register modules\"},\"setApprovalForModule(address,bool)\":{\"notice\":\"Allows a user to set the approval for a given module\"},\"setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Sets approval for a module given an EIP-712 signature\"},\"setBatchApprovalForModules(address[],bool)\":{\"notice\":\"Sets approvals for multiple modules at once\"},\"setRegistrar(address)\":{\"notice\":\"Sets the registrar for the ZORA Module Manager\"},\"sigNonces(address)\":{\"notice\":\"The signature nonces for 3rd party module approvals\"},\"userApprovals(address,address)\":{\"notice\":\"Mapping of users and modules to approved status\"}},\"notice\":\"This contract allows users to approve registered modules on ZORA V3\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ZoraModuleManager.sol\":\"ZoraModuleManager\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":500000},\"remappings\":[\":@manifoldxyz/=node_modules/@manifoldxyz/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@rari-capital/=node_modules/@rari-capital/\",\":ds-test/=lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"contracts/ZoraModuleManager.sol\":{\"keccak256\":\"0x4cbcd339768b99d7a474fb675bfa0bc98e16831fca8d682ad989d82aa33a46bf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c730140494b017dba1a985b8ec4d6d18ce4180f6f46765d29c415debc82ab436\",\"dweb:/ipfs/QmfHmX2rkg1S3QdnYdyAfyNcuRqGy9hqHtzm4bh7RLk9Ec\"]},\"contracts/auxiliary/ZoraProtocolFeeSettings/ZoraProtocolFeeSettings.sol\":{\"keccak256\":\"0xa08a271a80974347441e17916887f1fb699cf793f62df25e50543d1f0e8719b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5599c29092ee20086f18f49715c3bc5db4754b6147ff2673fbe4f8ea6ae126e7\",\"dweb:/ipfs/QmaCNtZif7RLtU3oG2QKws1PWDv4UMQZvxGaezpR1BrBsR\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x921f012325281f7d81e29c53a13824cf6c2c5d77232065d0d4f3f912e97af6ea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7dbcedc364fce0ab5e54d21d4cbd91a97959f52c0674cf5c36a314bb58308f62\",\"dweb:/ipfs/QmfYpqHKtu3bSQ9FGvLwzdxRNykStpVPtoLNTaM1KBKj6E\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0x0d4de01fe5360c38b4ad2b0822a12722958428f5138a7ff47c1720eb6fa52bba\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://77724cecdfba8814632ab58737c2b0f2d4ad2d532bc614aee559b5593c1152f0\",\"dweb:/ipfs/QmUcE6gXyv7CQh4sUdcDABYKGTovTe1zLMZSEq95nkc3ph\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x2ccf9d2313a313d41a791505f2b5abfdc62191b5d4334f7f7a82691c088a1c87\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3a57d0854b2fdce6ebff933a48dca2445643d1eccfc27f00292e937f26c6a58\",\"dweb:/ipfs/QmW45rZooS9TqR4YXUbjRbtf2Bpb5ouSarBvfW1LdGprvV\"]},\"node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x32c202bd28995dd20c4347b7c6467a6d3241c74c8ad3edcbb610cd9205916c45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8179c356adb19e70d6b31a1eedc8c5c7f0c00e669e2540f4099e3844c6074d30\",\"dweb:/ipfs/QmWFbivarEobbqhS1go64ootVuHfVohBseerYy9FTEd1W2\"]},\"node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]}},\"version\":1}","metadata":{"compiler":{"version":"0.8.10+commit.fc410830"},"language":"Solidity","output":{"abi":[{"inputs":[{"internalType":"address","name":"_registrar","type":"address"},{"internalType":"address","name":"_feeToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"user","type":"address","indexed":true},{"internalType":"address","name":"module","type":"address","indexed":true},{"internalType":"bool","name":"approved","type":"bool","indexed":false}],"type":"event","name":"ModuleApprovalSet","anonymous":false},{"inputs":[{"internalType":"address","name":"module","type":"address","indexed":true}],"type":"event","name":"ModuleRegistered","anonymous":false},{"inputs":[{"internalType":"address","name":"newRegistrar","type":"address","indexed":true}],"type":"event","name":"RegistrarChanged","anonymous":false},{"inputs":[{"internalType":"address","name":"_user","type":"address"},{"internalType":"address","name":"_module","type":"address"}],"stateMutability":"view","type":"function","name":"isModuleApproved","outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"inputs":[],"stateMutability":"view","type":"function","name":"moduleFeeToken","outputs":[{"internalType":"contract ZoraProtocolFeeSettings","name":"","type":"address"}]},{"inputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function","name":"moduleRegistered","outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"inputs":[{"internalType":"address","name":"_module","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"registerModule"},{"inputs":[],"stateMutability":"view","type":"function","name":"registrar","outputs":[{"internalType":"address","name":"","type":"address"}]},{"inputs":[{"internalType":"address","name":"_module","type":"address"},{"internalType":"bool","name":"_approved","type":"bool"}],"stateMutability":"nonpayable","type":"function","name":"setApprovalForModule"},{"inputs":[{"internalType":"address","name":"_module","type":"address"},{"internalType":"address","name":"_user","type":"address"},{"internalType":"bool","name":"_approved","type":"bool"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint8","name":"_v","type":"uint8"},{"internalType":"bytes32","name":"_r","type":"bytes32"},{"internalType":"bytes32","name":"_s","type":"bytes32"}],"stateMutability":"nonpayable","type":"function","name":"setApprovalForModuleBySig"},{"inputs":[{"internalType":"address[]","name":"_modules","type":"address[]"},{"internalType":"bool","name":"_approved","type":"bool"}],"stateMutability":"nonpayable","type":"function","name":"setBatchApprovalForModules"},{"inputs":[{"internalType":"address","name":"_registrar","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"setRegistrar"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function","name":"sigNonces","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function","name":"userApprovals","outputs":[{"internalType":"bool","name":"","type":"bool"}]}],"devdoc":{"kind":"dev","methods":{"constructor":{"params":{"_feeToken":"The module fee token contract to mint from upon module registration","_registrar":"The initial registrar for the manager"}},"isModuleApproved(address,address)":{"params":{"_module":"The module to check approvals for","_user":"The user to check approvals for"},"returns":{"_0":"True if the module has been approved by the user, false otherwise"}},"registerModule(address)":{"params":{"_module":"The address of the module"}},"setApprovalForModule(address,bool)":{"params":{"_approved":"A boolean, whether or not to approve a module","_module":"The module to approve"}},"setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)":{"params":{"_approved":"A boolean, whether or not to approve a module","_deadline":"The deadline at which point the given signature expires","_module":"The module to approve","_r":"The first 64 bytes of the signature","_s":"Bytes 64-128 of the signature","_user":"The user to approve the module for","_v":"The 129th byte and chain ID of the signature"}},"setBatchApprovalForModules(address[],bool)":{"params":{"_approved":"A boolean, whether or not to approve the modules","_modules":"The list of module addresses to set approvals for"}},"setRegistrar(address)":{"params":{"_registrar":"the address of the new registrar"}}},"version":1},"userdoc":{"kind":"user","methods":{"isModuleApproved(address,address)":{"notice":"Returns true if the user has approved a given module, false otherwise"},"moduleFeeToken()":{"notice":"The module fee NFT contract to mint from upon module registration"},"moduleRegistered(address)":{"notice":"Mapping of modules to registered status"},"registerModule(address)":{"notice":"Registers a module"},"registrar()":{"notice":"The registrar address that can register modules"},"setApprovalForModule(address,bool)":{"notice":"Allows a user to set the approval for a given module"},"setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)":{"notice":"Sets approval for a module given an EIP-712 signature"},"setBatchApprovalForModules(address[],bool)":{"notice":"Sets approvals for multiple modules at once"},"setRegistrar(address)":{"notice":"Sets the registrar for the ZORA Module Manager"},"sigNonces(address)":{"notice":"The signature nonces for 3rd party module approvals"},"userApprovals(address,address)":{"notice":"Mapping of users and modules to approved status"}},"version":1}},"settings":{"remappings":["@manifoldxyz/=node_modules/@manifoldxyz/","@openzeppelin/=node_modules/@openzeppelin/","@rari-capital/=node_modules/@rari-capital/","ds-test/=lib/ds-test/src/","forge-std/=lib/forge-std/src/"],"optimizer":{"enabled":true,"runs":500000},"metadata":{"bytecodeHash":"ipfs"},"compilationTarget":{"contracts/ZoraModuleManager.sol":"ZoraModuleManager"},"evmVersion":"london","libraries":{}},"sources":{"contracts/ZoraModuleManager.sol":{"keccak256":"0x4cbcd339768b99d7a474fb675bfa0bc98e16831fca8d682ad989d82aa33a46bf","urls":["bzz-raw://c730140494b017dba1a985b8ec4d6d18ce4180f6f46765d29c415debc82ab436","dweb:/ipfs/QmfHmX2rkg1S3QdnYdyAfyNcuRqGy9hqHtzm4bh7RLk9Ec"],"license":"MIT"},"contracts/auxiliary/ZoraProtocolFeeSettings/ZoraProtocolFeeSettings.sol":{"keccak256":"0xa08a271a80974347441e17916887f1fb699cf793f62df25e50543d1f0e8719b3","urls":["bzz-raw://5599c29092ee20086f18f49715c3bc5db4754b6147ff2673fbe4f8ea6ae126e7","dweb:/ipfs/QmaCNtZif7RLtU3oG2QKws1PWDv4UMQZvxGaezpR1BrBsR"],"license":"MIT"},"node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol":{"keccak256":"0x921f012325281f7d81e29c53a13824cf6c2c5d77232065d0d4f3f912e97af6ea","urls":["bzz-raw://7dbcedc364fce0ab5e54d21d4cbd91a97959f52c0674cf5c36a314bb58308f62","dweb:/ipfs/QmfYpqHKtu3bSQ9FGvLwzdxRNykStpVPtoLNTaM1KBKj6E"],"license":"MIT"},"node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol":{"keccak256":"0x0d4de01fe5360c38b4ad2b0822a12722958428f5138a7ff47c1720eb6fa52bba","urls":["bzz-raw://77724cecdfba8814632ab58737c2b0f2d4ad2d532bc614aee559b5593c1152f0","dweb:/ipfs/QmUcE6gXyv7CQh4sUdcDABYKGTovTe1zLMZSEq95nkc3ph"],"license":"MIT"},"node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol":{"keccak256":"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da","urls":["bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708","dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV"],"license":"MIT"},"node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol":{"keccak256":"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9","urls":["bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146","dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf"],"license":"MIT"},"node_modules/@openzeppelin/contracts/utils/Address.sol":{"keccak256":"0x2ccf9d2313a313d41a791505f2b5abfdc62191b5d4334f7f7a82691c088a1c87","urls":["bzz-raw://b3a57d0854b2fdce6ebff933a48dca2445643d1eccfc27f00292e937f26c6a58","dweb:/ipfs/QmW45rZooS9TqR4YXUbjRbtf2Bpb5ouSarBvfW1LdGprvV"],"license":"MIT"},"node_modules/@openzeppelin/contracts/utils/Context.sol":{"keccak256":"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7","urls":["bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92","dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"],"license":"MIT"},"node_modules/@openzeppelin/contracts/utils/Strings.sol":{"keccak256":"0x32c202bd28995dd20c4347b7c6467a6d3241c74c8ad3edcbb610cd9205916c45","urls":["bzz-raw://8179c356adb19e70d6b31a1eedc8c5c7f0c00e669e2540f4099e3844c6074d30","dweb:/ipfs/QmWFbivarEobbqhS1go64ootVuHfVohBseerYy9FTEd1W2"],"license":"MIT"},"node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol":{"keccak256":"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b","urls":["bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d","dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43"],"license":"MIT"},"node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol":{"keccak256":"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1","urls":["bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f","dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"],"license":"MIT"}},"version":1},"id":0}
+{
+  "abi": [
+    {
+      "type": "constructor",
+      "inputs": [
+        { "name": "_registrar", "type": "address", "internalType": "address" },
+        { "name": "_feeToken", "type": "address", "internalType": "address" }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "isModuleApproved",
+      "inputs": [
+        { "name": "_user", "type": "address", "internalType": "address" },
+        { "name": "_module", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "moduleFeeToken",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "contract ZoraProtocolFeeSettings"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "moduleRegistered",
+      "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "registerModule",
+      "inputs": [
+        { "name": "_module", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "registrar",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "setApprovalForModule",
+      "inputs": [
+        { "name": "_module", "type": "address", "internalType": "address" },
+        { "name": "_approved", "type": "bool", "internalType": "bool" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setApprovalForModuleBySig",
+      "inputs": [
+        { "name": "_module", "type": "address", "internalType": "address" },
+        { "name": "_user", "type": "address", "internalType": "address" },
+        { "name": "_approved", "type": "bool", "internalType": "bool" },
+        { "name": "_deadline", "type": "uint256", "internalType": "uint256" },
+        { "name": "_v", "type": "uint8", "internalType": "uint8" },
+        { "name": "_r", "type": "bytes32", "internalType": "bytes32" },
+        { "name": "_s", "type": "bytes32", "internalType": "bytes32" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setBatchApprovalForModules",
+      "inputs": [
+        {
+          "name": "_modules",
+          "type": "address[]",
+          "internalType": "address[]"
+        },
+        { "name": "_approved", "type": "bool", "internalType": "bool" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setRegistrar",
+      "inputs": [
+        { "name": "_registrar", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "sigNonces",
+      "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "userApprovals",
+      "inputs": [
+        { "name": "", "type": "address", "internalType": "address" },
+        { "name": "", "type": "address", "internalType": "address" }
+      ],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "event",
+      "name": "ModuleApprovalSet",
+      "inputs": [
+        {
+          "name": "user",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "module",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "approved",
+          "type": "bool",
+          "indexed": false,
+          "internalType": "bool"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "ModuleRegistered",
+      "inputs": [
+        {
+          "name": "module",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "RegistrarChanged",
+      "inputs": [
+        {
+          "name": "newRegistrar",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    }
+  ],
+  "bytecode": {
+    "object": "0x600460c052635a4f524160e01b60e0527f8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f6101209081527fce58904c16226b928edd08e5ee91745b8b749acafb24ab016c32bb2f06593481610140527f2a80e1ef1d7842f27f2e6be0972bb708b9a135c38860dbe73c27c3486c34f4de610160524661018052306101a05260a06101008190526101c060405290206080523480156100a957600080fd5b5060405161101d38038061101d8339810160408190526100c891610177565b6001600160a01b0382166101365760405162461bcd60e51b815260206004820152602b60248201527f5a4d4d3a3a6d757374207365742072656769737472617220746f206e6f6e2d7a60448201526a65726f206164647265737360a81b606482015260840160405180910390fd5b600080546001600160a01b0319166001600160a01b039384161790551660a0526101aa565b80516001600160a01b038116811461017257600080fd5b919050565b6000806040838503121561018a57600080fd5b6101938361015b565b91506101a16020840161015b565b90509250929050565b60805160a051610e476101d6600039600081816101cc01526107a1015260006103e60152610e476000f3fe608060405234801561001057600080fd5b50600436106100c95760003560e01c80639e4a400c11610081578063f990ccd71161005b578063f990ccd714610214578063faab9d3914610242578063fbef5f521461025557600080fd5b80639e4a400c146101c7578063ad64ae4b146101ee578063bcb11ad31461020157600080fd5b80632b20e397116100b25780632b20e3971461012657806337436c981461016b5780639dbb83a7146101b457600080fd5b8063152c1b5b146100ce5780631be50153146100e3575b600080fd5b6100e16100dc366004610bac565b610278565b005b6101116100f1366004610bdf565b600160209081526000928352604080842090915290825290205460ff1681565b60405190151581526020015b60405180910390f35b6000546101469073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161011d565b610111610179366004610bdf565b73ffffffffffffffffffffffffffffffffffffffff918216600090815260016020908152604080832093909416825291909152205460ff1690565b6100e16101c2366004610c09565b610287565b6101467f000000000000000000000000000000000000000000000000000000000000000081565b6100e16101fc366004610c83565b6105bc565b6100e161020f366004610cd4565b610855565b610234610222366004610c83565b60036020526000908152604090205481565b60405190815260200161011d565b6100e1610250366004610c83565b610894565b610111610263366004610c83565b60026020526000908152604090205460ff1681565b610283823383610a4a565b5050565b8315806102945750428410155b610325576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602f60248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206460448201527f6561646c696e652065787069726564000000000000000000000000000000000060648201526084015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff868116600081815260036020908152604080832080546001810190915581517f8413132cc7aa5bd2ce1a1b142a3f09e2baeda86addf4f9a5dacd4679f56e7cec81850152958d16868301526060860194909452891515608086015260a0850189905260c0808601949094528051808603909401845260e08501905282519201919091207f19010000000000000000000000000000000000000000000000000000000000006101008401527f00000000000000000000000000000000000000000000000000000000000000006101028401526101228301529061014201604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08184030181528282528051602091820120600080855291840180845281905260ff88169284019290925260608301869052608083018590529092509060019060a0016020604051602081039080840390855afa15801561049f573d6000803e3d6000fd5b50506040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0015191505073ffffffffffffffffffffffffffffffffffffffff81161580159061051a57508773ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16145b6105a6576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603060248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206960448201527f6e76616c6964207369676e617475726500000000000000000000000000000000606482015260840161031c565b6105b1898989610a4a565b505050505050505050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610662576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff1615610718576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602d60248201527f5a4d4d3a3a72656769737465724d6f64756c65206d6f64756c6520616c72656160448201527f6479207265676973746572656400000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81811660008181526002602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055905490517fee1fe2ad000000000000000000000000000000000000000000000000000000008152908316600482015260248101919091527f00000000000000000000000000000000000000000000000000000000000000009091169063ee1fe2ad906044016020604051808303816000875af11580156107ec573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108109190610dc9565b5060405173ffffffffffffffffffffffffffffffffffffffff8216907f0961fbae397458c42f3f186eaabee4a989aafde93ac5d8d122cff462423a241e90600090a250565b815160005b8181101561088e5761088684828151811061087757610877610de2565b60200260200101513385610a4a565b60010161085a565b50505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461093a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81166109dd576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603860248201527f5a4d4d3a3a736574526567697374726172206d7573742073657420726567697360448201527f7472617220746f206e6f6e2d7a65726f20616464726573730000000000000000606482015260840161031c565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff8316908117825560405190917f6e4c52923c1e70447ecc72995ce26bf2400d9c26b1a7c21ab433e7caff8d40a291a250565b73ffffffffffffffffffffffffffffffffffffffff831660009081526002602052604090205460ff16610ad9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601e60248201527f5a4d4d3a3a6d7573742062652072656769737465726564206d6f64756c650000604482015260640161031c565b73ffffffffffffffffffffffffffffffffffffffff82811660009081526001602090815260408083209387168084529382529182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016851515908117909155915191825233917fae7dcf035464e268e998bd5ac0ac831ce45a68f2c2fbd438d6c1c5965eba79f2910160405180910390a3505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610b9757600080fd5b919050565b80358015158114610b9757600080fd5b60008060408385031215610bbf57600080fd5b610bc883610b73565b9150610bd660208401610b9c565b90509250929050565b60008060408385031215610bf257600080fd5b610bfb83610b73565b9150610bd660208401610b73565b600080600080600080600060e0888a031215610c2457600080fd5b610c2d88610b73565b9650610c3b60208901610b73565b9550610c4960408901610b9c565b945060608801359350608088013560ff81168114610c6657600080fd5b9699959850939692959460a0840135945060c09093013592915050565b600060208284031215610c9557600080fd5b610c9e82610b73565b9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60008060408385031215610ce757600080fd5b823567ffffffffffffffff80821115610cff57600080fd5b818501915085601f830112610d1357600080fd5b8135602082821115610d2757610d27610ca5565b8160051b6040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0603f83011681018181108682111715610d6a57610d6a610ca5565b604052928352818301935084810182019289841115610d8857600080fd5b948201945b83861015610dad57610d9e86610b73565b85529482019493820193610d8d565b9650610dbc9050878201610b9c565b9450505050509250929050565b600060208284031215610ddb57600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fdfea264697066735822122056cf7110f69d55909945a385f5512dd6aaade99485b1dbb88c7d626f09c18deb64736f6c634300080a0033",
+    "sourceMap": "899:13:0:-:0;303:13538;899:13;-1:-1:-1;;;899:13:0;;780:95;756:249;273:25:11;;;889:24:0;314:18:11;307:34;927:14:0;357:18:11;350:34;955:13:0;400:18:11;393:34;990:4:0;443:19:11;436:61;756:249:0;899:13;756:249;;;245:19:11;303:13538:0;756:249;737:274;;-1:-1:-1;684:327:0;2723:242;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;2792:24:0;;2784:80;;;;-1:-1:-1;;;2784:80:0;;1190:2:11;2784:80:0;;;1172:21:11;1229:2;1209:18;;;1202:30;1268:34;1248:18;;;1241:62;-1:-1:-1;;;1319:18:11;;;1312:41;1370:19;;2784:80:0;;;;;;;;2875:9;:22;;-1:-1:-1;;;;;;2875:22:0;-1:-1:-1;;;;;2875:22:0;;;;;;2907:51;;;303:13538;;508:177:11;587:13;;-1:-1:-1;;;;;629:31:11;;619:42;;609:70;;675:1;672;665:12;609:70;508:177;;;:::o;690:293::-;769:6;777;830:2;818:9;809:7;805:23;801:32;798:52;;;846:1;843;836:12;798:52;869:40;899:9;869:40;:::i;:::-;859:50;;928:49;973:2;962:9;958:18;928:49;:::i;:::-;918:59;;690:293;;;;;:::o;988:407::-;303:13538:0;;;;;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100c95760003560e01c80639e4a400c11610081578063f990ccd71161005b578063f990ccd714610214578063faab9d3914610242578063fbef5f521461025557600080fd5b80639e4a400c146101c7578063ad64ae4b146101ee578063bcb11ad31461020157600080fd5b80632b20e397116100b25780632b20e3971461012657806337436c981461016b5780639dbb83a7146101b457600080fd5b8063152c1b5b146100ce5780631be50153146100e3575b600080fd5b6100e16100dc366004610bac565b610278565b005b6101116100f1366004610bdf565b600160209081526000928352604080842090915290825290205460ff1681565b60405190151581526020015b60405180910390f35b6000546101469073ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161011d565b610111610179366004610bdf565b73ffffffffffffffffffffffffffffffffffffffff918216600090815260016020908152604080832093909416825291909152205460ff1690565b6100e16101c2366004610c09565b610287565b6101467f000000000000000000000000000000000000000000000000000000000000000081565b6100e16101fc366004610c83565b6105bc565b6100e161020f366004610cd4565b610855565b610234610222366004610c83565b60036020526000908152604090205481565b60405190815260200161011d565b6100e1610250366004610c83565b610894565b610111610263366004610c83565b60026020526000908152604090205460ff1681565b610283823383610a4a565b5050565b8315806102945750428410155b610325576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602f60248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206460448201527f6561646c696e652065787069726564000000000000000000000000000000000060648201526084015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff868116600081815260036020908152604080832080546001810190915581517f8413132cc7aa5bd2ce1a1b142a3f09e2baeda86addf4f9a5dacd4679f56e7cec81850152958d16868301526060860194909452891515608086015260a0850189905260c0808601949094528051808603909401845260e08501905282519201919091207f19010000000000000000000000000000000000000000000000000000000000006101008401527f00000000000000000000000000000000000000000000000000000000000000006101028401526101228301529061014201604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08184030181528282528051602091820120600080855291840180845281905260ff88169284019290925260608301869052608083018590529092509060019060a0016020604051602081039080840390855afa15801561049f573d6000803e3d6000fd5b50506040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0015191505073ffffffffffffffffffffffffffffffffffffffff81161580159061051a57508773ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16145b6105a6576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603060248201527f5a4d4d3a3a736574417070726f76616c466f724d6f64756c654279536967206960448201527f6e76616c6964207369676e617475726500000000000000000000000000000000606482015260840161031c565b6105b1898989610a4a565b505050505050505050565b60005473ffffffffffffffffffffffffffffffffffffffff163314610662576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff1615610718576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602d60248201527f5a4d4d3a3a72656769737465724d6f64756c65206d6f64756c6520616c72656160448201527f6479207265676973746572656400000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81811660008181526002602052604080822080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055905490517fee1fe2ad000000000000000000000000000000000000000000000000000000008152908316600482015260248101919091527f00000000000000000000000000000000000000000000000000000000000000009091169063ee1fe2ad906044016020604051808303816000875af11580156107ec573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108109190610dc9565b5060405173ffffffffffffffffffffffffffffffffffffffff8216907f0961fbae397458c42f3f186eaabee4a989aafde93ac5d8d122cff462423a241e90600090a250565b815160005b8181101561088e5761088684828151811061087757610877610de2565b60200260200101513385610a4a565b60010161085a565b50505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461093a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f5a4d4d3a3a6f6e6c79526567697374726172206d75737420626520726567697360448201527f7472617200000000000000000000000000000000000000000000000000000000606482015260840161031c565b73ffffffffffffffffffffffffffffffffffffffff81166109dd576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603860248201527f5a4d4d3a3a736574526567697374726172206d7573742073657420726567697360448201527f7472617220746f206e6f6e2d7a65726f20616464726573730000000000000000606482015260840161031c565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff8316908117825560405190917f6e4c52923c1e70447ecc72995ce26bf2400d9c26b1a7c21ab433e7caff8d40a291a250565b73ffffffffffffffffffffffffffffffffffffffff831660009081526002602052604090205460ff16610ad9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601e60248201527f5a4d4d3a3a6d7573742062652072656769737465726564206d6f64756c650000604482015260640161031c565b73ffffffffffffffffffffffffffffffffffffffff82811660009081526001602090815260408083209387168084529382529182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016851515908117909155915191825233917fae7dcf035464e268e998bd5ac0ac831ce45a68f2c2fbd438d6c1c5965eba79f2910160405180910390a3505050565b803573ffffffffffffffffffffffffffffffffffffffff81168114610b9757600080fd5b919050565b80358015158114610b9757600080fd5b60008060408385031215610bbf57600080fd5b610bc883610b73565b9150610bd660208401610b9c565b90509250929050565b60008060408385031215610bf257600080fd5b610bfb83610b73565b9150610bd660208401610b73565b600080600080600080600060e0888a031215610c2457600080fd5b610c2d88610b73565b9650610c3b60208901610b73565b9550610c4960408901610b9c565b945060608801359350608088013560ff81168114610c6657600080fd5b9699959850939692959460a0840135945060c09093013592915050565b600060208284031215610c9557600080fd5b610c9e82610b73565b9392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b60008060408385031215610ce757600080fd5b823567ffffffffffffffff80821115610cff57600080fd5b818501915085601f830112610d1357600080fd5b8135602082821115610d2757610d27610ca5565b8160051b6040517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0603f83011681018181108682111715610d6a57610d6a610ca5565b604052928352818301935084810182019289841115610d8857600080fd5b948201945b83861015610dad57610d9e86610b73565b85529482019493820193610d8d565b9650610dbc9050878201610b9c565b9450505050509250929050565b600060208284031215610ddb57600080fd5b5051919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fdfea264697066735822122056cf7110f69d55909945a385f5512dd6aaade99485b1dbb88c7d626f09c18deb64736f6c634300080a0033",
+    "sourceMap": "303:13538:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4460:140;;;;;;:::i;:::-;;:::i;:::-;;1377:65;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1069:14:11;;1062:22;1044:41;;1032:2;1017:18;1377:65:0;;;;;;;;1226:24;;;;;;;;;;;;1272:42:11;1260:55;;;1242:74;;1230:2;1215:18;1226:24:0;1096:226:11;3249:140:0;;;;;;:::i;:::-;3353:20;;;;3330:4;3353:20;;;:13;:20;;;;;;;;:29;;;;;;;;;;;;;;;3249:140;8546:1152;;;;;;:::i;:::-;;:::i;1100:55::-;;;;;11734:296;;;;;;:::i;:::-;;:::i;6293:568::-;;;;;;:::i;:::-;;:::i;1670:44::-;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;4068:25:11;;;4056:2;4041:18;1670:44:0;3922:177:11;13075:249:0;;;;;;:::i;:::-;;:::i;1547:48::-;;;;;;:::i;:::-;;;;;;;;;;;;;;;;4460:140;4540:53;4562:7;4571:10;4583:9;4540:21;:53::i;:::-;4460:140;;:::o;8546:1152::-;8769:14;;;:46;;;8800:15;8787:9;:28;;8769:46;8761:106;;;;;;;4306:2:11;8761:106:0;;;4288:21:11;4345:2;4325:18;;;4318:30;4384:34;4364:18;;;4357:62;4455:17;4435:18;;;4428:45;4490:19;;8761:106:0;;;;;;;;;9317:16;;;;8878:14;9317:16;;;:9;:16;;;;;;;;:18;;;;;;;;9242:94;;566:66;9242:94;;;4801:25:11;4923:15;;;4903:18;;;4896:43;4955:18;;;4948:43;;;;5034:14;;5027:22;5007:18;;;5000:50;5066:19;;;5059:35;;;5110:19;;;;5103:35;;;;9242:94:0;;;;;;;;;;4773:19:11;;;9242:94:0;;9207:151;;;;;;;;5419:66:11;9091:285:0;;;5407:79:11;9161:24:0;5502:11:11;;;5495:27;5538:12;;;5531:28;8878:14:0;5575:12:11;;9091:285:0;;;;;;;;;;;;;9064:326;;9091:285;9064:326;;;;9411:24;9438:29;;;;;;;;;5825:25:11;;;5898:4;5886:17;;5866:18;;;5859:45;;;;5920:18;;;5913:34;;;5963:18;;;5956:34;;;9064:326:0;;-1:-1:-1;9411:24:0;9438:29;;5797:19:11;;9438:29:0;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;9438:29:0;;;;;;-1:-1:-1;;9499:30:0;;;;;;;:59;;;9553:5;9533:25;;:16;:25;;;9499:59;9478:154;;;;;;;6203:2:11;9478:154:0;;;6185:21:11;6242:2;6222:18;;;6215:30;6281:34;6261:18;;;6254:62;6352:18;6332;;;6325:46;6388:19;;9478:154:0;6001:412:11;9478:154:0;9643:48;9665:7;9674:5;9681:9;9643:21;:48::i;:::-;8751:947;;8546:1152;;;;;;;:::o;11734:296::-;1842:9;;;;1828:10;:23;1820:72;;;;;;;6620:2:11;1820:72:0;;;6602:21:11;6659:2;6639:18;;;6632:30;6698:34;6678:18;;;6671:62;6769:6;6749:18;;;6742:34;6793:19;;1820:72:0;6418:400:11;1820:72:0;11815:25:::1;::::0;::::1;;::::0;;;:16:::1;:25;::::0;;;;;::::1;;11814:26;11806:84;;;::::0;::::1;::::0;;7025:2:11;11806:84:0::1;::::0;::::1;7007:21:11::0;7064:2;7044:18;;;7037:30;7103:34;7083:18;;;7076:62;7174:15;7154:18;;;7147:43;7207:19;;11806:84:0::1;6823:409:11::0;11806:84:0::1;11901:25;::::0;;::::1;;::::0;;;:16:::1;:25;::::0;;;;;:32;;;::::1;11929:4;11901:32;::::0;;11963:9;;11943:39;;;;;11963:9;;::::1;11943:39;::::0;::::1;7472:34:11::0;7522:18;;;7515:43;;;;11943:14:0::1;:19:::0;;::::1;::::0;::::1;::::0;7384:18:11;;11943:39:0::1;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1::0;11998:25:0::1;::::0;::::1;::::0;::::1;::::0;::::1;::::0;;;::::1;11734:296:::0;:::o;6293:568::-;6467:15;;6446:18;6530:325;6554:10;6550:1;:14;6530:325;;;6654:57;6676:8;6685:1;6676:11;;;;;;;;:::i;:::-;;;;;;;6689:10;6701:9;6654:21;:57::i;:::-;6827:3;;6530:325;;;;6379:482;6293:568;;:::o;13075:249::-;1842:9;;;;1828:10;:23;1820:72;;;;;;;6620:2:11;1820:72:0;;;6602:21:11;6659:2;6639:18;;;6632:30;6698:34;6678:18;;;6671:62;6769:6;6749:18;;;6742:34;6793:19;;1820:72:0;6418:400:11;1820:72:0;13156:24:::1;::::0;::::1;13148:93;;;::::0;::::1;::::0;;8149:2:11;13148:93:0::1;::::0;::::1;8131:21:11::0;8188:2;8168:18;;;8161:30;8227:34;8207:18;;;8200:62;8298:26;8278:18;;;8271:54;8342:19;;13148:93:0::1;7947:420:11::0;13148:93:0::1;13251:9;:22:::0;;;::::1;;::::0;::::1;::::0;;::::1;::::0;;13289:28:::1;::::0;13251:22;;13289:28:::1;::::0;::::1;13075:249:::0;:::o;13550:289::-;13655:25;;;;;;;:16;:25;;;;;;;;13647:68;;;;;;;8574:2:11;13647:68:0;;;8556:21:11;8613:2;8593:18;;;8586:30;8652:32;8632:18;;;8625:60;8702:18;;13647:68:0;8372:354:11;13647:68:0;13726:20;;;;;;;;:13;:20;;;;;;;;:29;;;;;;;;;;;;;:41;;;;;;;;;;;;;13783:49;;1044:41:11;;;13801:10:0;;13783:49;;1017:18:11;13783:49:0;;;;;;;13550:289;;;:::o;14:196:11:-;82:20;;142:42;131:54;;121:65;;111:93;;200:1;197;190:12;111:93;14:196;;;:::o;215:160::-;280:20;;336:13;;329:21;319:32;;309:60;;365:1;362;355:12;380:254;445:6;453;506:2;494:9;485:7;481:23;477:32;474:52;;;522:1;519;512:12;474:52;545:29;564:9;545:29;:::i;:::-;535:39;;593:35;624:2;613:9;609:18;593:35;:::i;:::-;583:45;;380:254;;;;;:::o;639:260::-;707:6;715;768:2;756:9;747:7;743:23;739:32;736:52;;;784:1;781;774:12;736:52;807:29;826:9;807:29;:::i;:::-;797:39;;855:38;889:2;878:9;874:18;855:38;:::i;1327:693::-;1435:6;1443;1451;1459;1467;1475;1483;1536:3;1524:9;1515:7;1511:23;1507:33;1504:53;;;1553:1;1550;1543:12;1504:53;1576:29;1595:9;1576:29;:::i;:::-;1566:39;;1624:38;1658:2;1647:9;1643:18;1624:38;:::i;:::-;1614:48;;1681:35;1712:2;1701:9;1697:18;1681:35;:::i;:::-;1671:45;;1763:2;1752:9;1748:18;1735:32;1725:42;;1817:3;1806:9;1802:19;1789:33;1862:4;1855:5;1851:16;1844:5;1841:27;1831:55;;1882:1;1879;1872:12;1831:55;1327:693;;;;-1:-1:-1;1327:693:11;;;;1905:5;1957:3;1942:19;;1929:33;;-1:-1:-1;2009:3:11;1994:19;;;1981:33;;1327:693;-1:-1:-1;;1327:693:11:o;2287:186::-;2346:6;2399:2;2387:9;2378:7;2374:23;2370:32;2367:52;;;2415:1;2412;2405:12;2367:52;2438:29;2457:9;2438:29;:::i;:::-;2428:39;2287:186;-1:-1:-1;;;2287:186:11:o;2478:184::-;2530:77;2527:1;2520:88;2627:4;2624:1;2617:15;2651:4;2648:1;2641:15;2667:1250;2757:6;2765;2818:2;2806:9;2797:7;2793:23;2789:32;2786:52;;;2834:1;2831;2824:12;2786:52;2874:9;2861:23;2903:18;2944:2;2936:6;2933:14;2930:34;;;2960:1;2957;2950:12;2930:34;2998:6;2987:9;2983:22;2973:32;;3043:7;3036:4;3032:2;3028:13;3024:27;3014:55;;3065:1;3062;3055:12;3014:55;3101:2;3088:16;3123:4;3146:2;3142;3139:10;3136:36;;;3152:18;;:::i;:::-;3198:2;3195:1;3191:10;3230:2;3224:9;3289:66;3284:2;3280;3276:11;3272:84;3264:6;3260:97;3407:6;3395:10;3392:22;3387:2;3375:10;3372:18;3369:46;3366:72;;;3418:18;;:::i;:::-;3454:2;3447:22;3504:18;;;3538:15;;;;-1:-1:-1;3580:11:11;;;3576:20;;;3608:19;;;3605:39;;;3640:1;3637;3630:12;3605:39;3664:11;;;;3684:148;3700:6;3695:3;3692:15;3684:148;;;3766:23;3785:3;3766:23;:::i;:::-;3754:36;;3717:12;;;;3810;;;;3684:148;;;3851:6;-1:-1:-1;3876:35:11;;-1:-1:-1;3892:18:11;;;3876:35;:::i;:::-;3866:45;;;;;;2667:1250;;;;;:::o;7569:184::-;7639:6;7692:2;7680:9;7671:7;7667:23;7663:32;7660:52;;;7708:1;7705;7698:12;7660:52;-1:-1:-1;7731:16:11;;7569:184;-1:-1:-1;7569:184:11:o;7758:::-;7810:77;7807:1;7800:88;7907:4;7904:1;7897:15;7931:4;7928:1;7921:15",
+    "linkReferences": {},
+    "immutableReferences": {
+      "34": [{ "start": 998, "length": 32 }],
+      "38": [
+        { "start": 460, "length": 32 },
+        { "start": 1953, "length": 32 }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "isModuleApproved(address,address)": "37436c98",
+    "moduleFeeToken()": "9e4a400c",
+    "moduleRegistered(address)": "fbef5f52",
+    "registerModule(address)": "ad64ae4b",
+    "registrar()": "2b20e397",
+    "setApprovalForModule(address,bool)": "152c1b5b",
+    "setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)": "9dbb83a7",
+    "setBatchApprovalForModules(address[],bool)": "bcb11ad3",
+    "setRegistrar(address)": "faab9d39",
+    "sigNonces(address)": "f990ccd7",
+    "userApprovals(address,address)": "1be50153"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_registrar\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feeToken\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ModuleApprovalSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"module\",\"type\":\"address\"}],\"name\":\"ModuleRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newRegistrar\",\"type\":\"address\"}],\"name\":\"RegistrarChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"isModuleApproved\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"moduleFeeToken\",\"outputs\":[{\"internalType\":\"contract ZoraProtocolFeeSettings\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"moduleRegistered\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"registerModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registrar\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"_deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"_v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"_r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"_s\",\"type\":\"bytes32\"}],\"name\":\"setApprovalForModuleBySig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_modules\",\"type\":\"address[]\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"}],\"name\":\"setBatchApprovalForModules\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_registrar\",\"type\":\"address\"}],\"name\":\"setRegistrar\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"sigNonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userApprovals\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"tbtstl <t@zora.co>\",\"events\":{\"ModuleApprovalSet(address,address,bool)\":{\"params\":{\"approved\":\"Whether the user added or removed approval\",\"module\":\"The address of the module\",\"user\":\"The address of the user\"}},\"ModuleRegistered(address)\":{\"params\":{\"module\":\"The address of the module\"}},\"RegistrarChanged(address)\":{\"params\":{\"newRegistrar\":\"The address of the new registrar\"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_feeToken\":\"The module fee token contract to mint from upon module registration\",\"_registrar\":\"The initial registrar for the manager\"}},\"isModuleApproved(address,address)\":{\"params\":{\"_module\":\"The module to check approvals for\",\"_user\":\"The user to check approvals for\"},\"returns\":{\"_0\":\"True if the module has been approved by the user, false otherwise\"}},\"registerModule(address)\":{\"params\":{\"_module\":\"The address of the module\"}},\"setApprovalForModule(address,bool)\":{\"params\":{\"_approved\":\"A boolean, whether or not to approve a module\",\"_module\":\"The module to approve\"}},\"setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"params\":{\"_approved\":\"A boolean, whether or not to approve a module\",\"_deadline\":\"The deadline at which point the given signature expires\",\"_module\":\"The module to approve\",\"_r\":\"The first 64 bytes of the signature\",\"_s\":\"Bytes 64-128 of the signature\",\"_user\":\"The user to approve the module for\",\"_v\":\"The 129th byte and chain ID of the signature\"}},\"setBatchApprovalForModules(address[],bool)\":{\"params\":{\"_approved\":\"A boolean, whether or not to approve the modules\",\"_modules\":\"The list of module addresses to set approvals for\"}},\"setRegistrar(address)\":{\"params\":{\"_registrar\":\"the address of the new registrar\"}}},\"stateVariables\":{\"SIGNED_APPROVAL_TYPEHASH\":{\"details\":\"keccak256(\\\"SignedApproval(address module,address user,bool approved,uint256 deadline,uint256 nonce)\\\")\"},\"moduleRegistered\":{\"details\":\"Module address => Registered\"},\"userApprovals\":{\"details\":\"User address => Module address => Approved\"}},\"title\":\"ZoraModuleManager\",\"version\":1},\"userdoc\":{\"events\":{\"ModuleApprovalSet(address,address,bool)\":{\"notice\":\"Emitted when a user's module approval is updated\"},\"ModuleRegistered(address)\":{\"notice\":\"Emitted when a module is registered\"},\"RegistrarChanged(address)\":{\"notice\":\"Emitted when the registrar address is updated\"}},\"kind\":\"user\",\"methods\":{\"isModuleApproved(address,address)\":{\"notice\":\"Returns true if the user has approved a given module, false otherwise\"},\"moduleFeeToken()\":{\"notice\":\"The module fee NFT contract to mint from upon module registration\"},\"moduleRegistered(address)\":{\"notice\":\"Mapping of modules to registered status\"},\"registerModule(address)\":{\"notice\":\"Registers a module\"},\"registrar()\":{\"notice\":\"The registrar address that can register modules\"},\"setApprovalForModule(address,bool)\":{\"notice\":\"Allows a user to set the approval for a given module\"},\"setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Sets approval for a module given an EIP-712 signature\"},\"setBatchApprovalForModules(address[],bool)\":{\"notice\":\"Sets approvals for multiple modules at once\"},\"setRegistrar(address)\":{\"notice\":\"Sets the registrar for the ZORA Module Manager\"},\"sigNonces(address)\":{\"notice\":\"The signature nonces for 3rd party module approvals\"},\"userApprovals(address,address)\":{\"notice\":\"Mapping of users and modules to approved status\"}},\"notice\":\"This contract allows users to approve registered modules on ZORA V3\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ZoraModuleManager.sol\":\"ZoraModuleManager\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":500000},\"remappings\":[\":@manifoldxyz/=node_modules/@manifoldxyz/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@rari-capital/=node_modules/@rari-capital/\",\":ds-test/=lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"contracts/ZoraModuleManager.sol\":{\"keccak256\":\"0x4cbcd339768b99d7a474fb675bfa0bc98e16831fca8d682ad989d82aa33a46bf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c730140494b017dba1a985b8ec4d6d18ce4180f6f46765d29c415debc82ab436\",\"dweb:/ipfs/QmfHmX2rkg1S3QdnYdyAfyNcuRqGy9hqHtzm4bh7RLk9Ec\"]},\"contracts/auxiliary/ZoraProtocolFeeSettings/ZoraProtocolFeeSettings.sol\":{\"keccak256\":\"0xa08a271a80974347441e17916887f1fb699cf793f62df25e50543d1f0e8719b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5599c29092ee20086f18f49715c3bc5db4754b6147ff2673fbe4f8ea6ae126e7\",\"dweb:/ipfs/QmaCNtZif7RLtU3oG2QKws1PWDv4UMQZvxGaezpR1BrBsR\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x921f012325281f7d81e29c53a13824cf6c2c5d77232065d0d4f3f912e97af6ea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7dbcedc364fce0ab5e54d21d4cbd91a97959f52c0674cf5c36a314bb58308f62\",\"dweb:/ipfs/QmfYpqHKtu3bSQ9FGvLwzdxRNykStpVPtoLNTaM1KBKj6E\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0x0d4de01fe5360c38b4ad2b0822a12722958428f5138a7ff47c1720eb6fa52bba\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://77724cecdfba8814632ab58737c2b0f2d4ad2d532bc614aee559b5593c1152f0\",\"dweb:/ipfs/QmUcE6gXyv7CQh4sUdcDABYKGTovTe1zLMZSEq95nkc3ph\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x2ccf9d2313a313d41a791505f2b5abfdc62191b5d4334f7f7a82691c088a1c87\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3a57d0854b2fdce6ebff933a48dca2445643d1eccfc27f00292e937f26c6a58\",\"dweb:/ipfs/QmW45rZooS9TqR4YXUbjRbtf2Bpb5ouSarBvfW1LdGprvV\"]},\"node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x32c202bd28995dd20c4347b7c6467a6d3241c74c8ad3edcbb610cd9205916c45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8179c356adb19e70d6b31a1eedc8c5c7f0c00e669e2540f4099e3844c6074d30\",\"dweb:/ipfs/QmWFbivarEobbqhS1go64ootVuHfVohBseerYy9FTEd1W2\"]},\"node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": { "version": "0.8.10+commit.fc410830" },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_registrar",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_feeToken",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "bool",
+              "name": "approved",
+              "type": "bool",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ModuleApprovalSet",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "module",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ModuleRegistered",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newRegistrar",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "RegistrarChanged",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "_user", "type": "address" },
+            { "internalType": "address", "name": "_module", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isModuleApproved",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "moduleFeeToken",
+          "outputs": [
+            {
+              "internalType": "contract ZoraProtocolFeeSettings",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "moduleRegistered",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "_module", "type": "address" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "registerModule"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "registrar",
+          "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ]
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "_module", "type": "address" },
+            { "internalType": "bool", "name": "_approved", "type": "bool" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setApprovalForModule"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "_module", "type": "address" },
+            { "internalType": "address", "name": "_user", "type": "address" },
+            { "internalType": "bool", "name": "_approved", "type": "bool" },
+            {
+              "internalType": "uint256",
+              "name": "_deadline",
+              "type": "uint256"
+            },
+            { "internalType": "uint8", "name": "_v", "type": "uint8" },
+            { "internalType": "bytes32", "name": "_r", "type": "bytes32" },
+            { "internalType": "bytes32", "name": "_s", "type": "bytes32" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setApprovalForModuleBySig"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "_modules",
+              "type": "address[]"
+            },
+            { "internalType": "bool", "name": "_approved", "type": "bool" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setBatchApprovalForModules"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_registrar",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setRegistrar"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "sigNonces",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ]
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "userApprovals",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "constructor": {
+            "params": {
+              "_feeToken": "The module fee token contract to mint from upon module registration",
+              "_registrar": "The initial registrar for the manager"
+            }
+          },
+          "isModuleApproved(address,address)": {
+            "params": {
+              "_module": "The module to check approvals for",
+              "_user": "The user to check approvals for"
+            },
+            "returns": {
+              "_0": "True if the module has been approved by the user, false otherwise"
+            }
+          },
+          "registerModule(address)": {
+            "params": { "_module": "The address of the module" }
+          },
+          "setApprovalForModule(address,bool)": {
+            "params": {
+              "_approved": "A boolean, whether or not to approve a module",
+              "_module": "The module to approve"
+            }
+          },
+          "setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)": {
+            "params": {
+              "_approved": "A boolean, whether or not to approve a module",
+              "_deadline": "The deadline at which point the given signature expires",
+              "_module": "The module to approve",
+              "_r": "The first 64 bytes of the signature",
+              "_s": "Bytes 64-128 of the signature",
+              "_user": "The user to approve the module for",
+              "_v": "The 129th byte and chain ID of the signature"
+            }
+          },
+          "setBatchApprovalForModules(address[],bool)": {
+            "params": {
+              "_approved": "A boolean, whether or not to approve the modules",
+              "_modules": "The list of module addresses to set approvals for"
+            }
+          },
+          "setRegistrar(address)": {
+            "params": { "_registrar": "the address of the new registrar" }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "isModuleApproved(address,address)": {
+            "notice": "Returns true if the user has approved a given module, false otherwise"
+          },
+          "moduleFeeToken()": {
+            "notice": "The module fee NFT contract to mint from upon module registration"
+          },
+          "moduleRegistered(address)": {
+            "notice": "Mapping of modules to registered status"
+          },
+          "registerModule(address)": { "notice": "Registers a module" },
+          "registrar()": {
+            "notice": "The registrar address that can register modules"
+          },
+          "setApprovalForModule(address,bool)": {
+            "notice": "Allows a user to set the approval for a given module"
+          },
+          "setApprovalForModuleBySig(address,address,bool,uint256,uint8,bytes32,bytes32)": {
+            "notice": "Sets approval for a module given an EIP-712 signature"
+          },
+          "setBatchApprovalForModules(address[],bool)": {
+            "notice": "Sets approvals for multiple modules at once"
+          },
+          "setRegistrar(address)": {
+            "notice": "Sets the registrar for the ZORA Module Manager"
+          },
+          "sigNonces(address)": {
+            "notice": "The signature nonces for 3rd party module approvals"
+          },
+          "userApprovals(address,address)": {
+            "notice": "Mapping of users and modules to approved status"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@manifoldxyz/=node_modules/@manifoldxyz/",
+        "@openzeppelin/=node_modules/@openzeppelin/",
+        "@rari-capital/=node_modules/@rari-capital/",
+        "ds-test/=lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": { "enabled": true, "runs": 500000 },
+      "metadata": { "bytecodeHash": "ipfs" },
+      "compilationTarget": {
+        "contracts/ZoraModuleManager.sol": "ZoraModuleManager"
+      },
+      "evmVersion": "london",
+      "libraries": {}
+    },
+    "sources": {
+      "contracts/ZoraModuleManager.sol": {
+        "keccak256": "0x4cbcd339768b99d7a474fb675bfa0bc98e16831fca8d682ad989d82aa33a46bf",
+        "urls": [
+          "bzz-raw://c730140494b017dba1a985b8ec4d6d18ce4180f6f46765d29c415debc82ab436",
+          "dweb:/ipfs/QmfHmX2rkg1S3QdnYdyAfyNcuRqGy9hqHtzm4bh7RLk9Ec"
+        ],
+        "license": "MIT"
+      },
+      "contracts/auxiliary/ZoraProtocolFeeSettings/ZoraProtocolFeeSettings.sol": {
+        "keccak256": "0xa08a271a80974347441e17916887f1fb699cf793f62df25e50543d1f0e8719b3",
+        "urls": [
+          "bzz-raw://5599c29092ee20086f18f49715c3bc5db4754b6147ff2673fbe4f8ea6ae126e7",
+          "dweb:/ipfs/QmaCNtZif7RLtU3oG2QKws1PWDv4UMQZvxGaezpR1BrBsR"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+        "keccak256": "0x921f012325281f7d81e29c53a13824cf6c2c5d77232065d0d4f3f912e97af6ea",
+        "urls": [
+          "bzz-raw://7dbcedc364fce0ab5e54d21d4cbd91a97959f52c0674cf5c36a314bb58308f62",
+          "dweb:/ipfs/QmfYpqHKtu3bSQ9FGvLwzdxRNykStpVPtoLNTaM1KBKj6E"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+        "keccak256": "0x0d4de01fe5360c38b4ad2b0822a12722958428f5138a7ff47c1720eb6fa52bba",
+        "urls": [
+          "bzz-raw://77724cecdfba8814632ab58737c2b0f2d4ad2d532bc614aee559b5593c1152f0",
+          "dweb:/ipfs/QmUcE6gXyv7CQh4sUdcDABYKGTovTe1zLMZSEq95nkc3ph"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+        "keccak256": "0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da",
+        "urls": [
+          "bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708",
+          "dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+        "keccak256": "0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9",
+        "urls": [
+          "bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146",
+          "dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/Address.sol": {
+        "keccak256": "0x2ccf9d2313a313d41a791505f2b5abfdc62191b5d4334f7f7a82691c088a1c87",
+        "urls": [
+          "bzz-raw://b3a57d0854b2fdce6ebff933a48dca2445643d1eccfc27f00292e937f26c6a58",
+          "dweb:/ipfs/QmW45rZooS9TqR4YXUbjRbtf2Bpb5ouSarBvfW1LdGprvV"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/Context.sol": {
+        "keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+        "urls": [
+          "bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+          "dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+        "keccak256": "0x32c202bd28995dd20c4347b7c6467a6d3241c74c8ad3edcbb610cd9205916c45",
+        "urls": [
+          "bzz-raw://8179c356adb19e70d6b31a1eedc8c5c7f0c00e669e2540f4099e3844c6074d30",
+          "dweb:/ipfs/QmWFbivarEobbqhS1go64ootVuHfVohBseerYy9FTEd1W2"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+        "keccak256": "0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b",
+        "urls": [
+          "bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d",
+          "dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+        "keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+        "urls": [
+          "bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+          "dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "id": 0
+}

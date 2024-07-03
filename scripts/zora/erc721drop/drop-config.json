@@ -2,10 +2,11 @@
   "name": "Immersion: Into the Aura Odyssey",
   "symbol": "ITAO",
   "defaultAdmin": "0x6993DF39F2b61c8B4fC59869a5AD61f71d34C8ad",
-  "editionSize": 100000,
+  "editionSize": 1000,
   "royaltyBPS": 0,
   "fundsRecipient": "0x6993DF39F2b61c8B4fC59869a5AD61f71d34C8ad",
-  "metadataURIBase": "ipfs://QmPf5LawLS1ZVqFTSs7JhFD6yteKQLXxYMEYoc1PcKkhVj/",
+  "metadataContractURI": "ipfs://bafkreibd5kfvuzti5qoiqevexcso5e2277owxw62agepgk4n37u6nkpzzu",
+  "metadataURIBase": "ipfs://bafybeih72ftytkbwq456vvdwtwit3tlardzkr2w2dwyqoad4cfdit4nz7e/",
   "saleConfig": {
     "presale": {
       "startTime": 0,
@@ -13,9 +14,9 @@
     },
     "publicSale": {
       "startTime": 1718611200,
-      "endTime": 1726387200,
+      "endTime": 1751421494,
       "publicSalePrice": "0",
-      "maxSalePurchasePerAddress": 1
+      "maxSalePurchasePerAddress": 0
     }
   },
   "metadata": {

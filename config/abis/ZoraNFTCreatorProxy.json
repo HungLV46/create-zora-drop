@@ -271,12 +271,8 @@
     "absolutePath": "src/ZoraNFTCreatorProxy.sol",
     "id": 36642,
     "exportedSymbols": {
-      "ERC1967Proxy": [
-        3701
-      ],
-      "ZoraNFTCreatorProxy": [
-        36641
-      ]
+      "ERC1967Proxy": [3701],
+      "ZoraNFTCreatorProxy": [36641]
     },
     "nodeType": "SourceUnit",
     "src": "32:320:74",
@@ -286,12 +282,7 @@
         "nodeType": "PragmaDirective",
         "src": "32:24:74",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".10"
-        ]
+        "literals": ["solidity", "^", "0.8", ".10"]
       },
       {
         "id": 36625,
@@ -371,9 +362,7 @@
                 "modifierName": {
                   "id": 36634,
                   "name": "ERC1967Proxy",
-                  "nameLocations": [
-                    "316:12:74"
-                  ],
+                  "nameLocations": ["316:12:74"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 3701,
                   "src": "316:12:74"
@@ -464,9 +453,7 @@
             "baseName": {
               "id": 36627,
               "name": "ERC1967Proxy",
-              "nameLocations": [
-                "225:12:74"
-              ],
+              "nameLocations": ["225:12:74"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 3701,
               "src": "225:12:74"
@@ -486,12 +473,7 @@
           "text": "@dev Zora NFT Creator Proxy Access Contract"
         },
         "fullyImplemented": true,
-        "linearizedBaseContracts": [
-          36641,
-          3701,
-          4019,
-          4071
-        ],
+        "linearizedBaseContracts": [36641, 3701, 4019, 4071],
         "name": "ZoraNFTCreatorProxy",
         "nameLocation": "202:19:74",
         "scope": 36642,

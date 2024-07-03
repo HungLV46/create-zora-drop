@@ -5399,81 +5399,31 @@
     "absolutePath": "src/ERC721Drop.sol",
     "id": 36474,
     "exportedSymbols": {
-      "AccessControlUpgradeable": [
-        1809
-      ],
-      "ERC721AUpgradeable": [
-        1398
-      ],
-      "ERC721Drop": [
-        36473
-      ],
-      "ERC721DropStorageV1": [
-        38271
-      ],
-      "ERC721DropStorageV2": [
-        38276
-      ],
-      "ERC721Rewards": [
-        5492
-      ],
-      "ERC721RewardsStorageV1": [
-        5497
-      ],
-      "FundsReceiver": [
-        38297
-      ],
-      "IERC165Upgradeable": [
-        3550
-      ],
-      "IERC2981Upgradeable": [
-        2028
-      ],
-      "IERC4906": [
-        37236
-      ],
-      "IERC721AUpgradeable": [
-        1469
-      ],
-      "IERC721Drop": [
-        37556
-      ],
-      "IERC721Upgradeable": [
-        2826
-      ],
-      "IFactoryUpgradeGate": [
-        37583
-      ],
-      "IMetadataRenderer": [
-        37603
-      ],
-      "IOwnable": [
-        37635
-      ],
-      "IProtocolRewards": [
-        5937
-      ],
-      "MathUpgradeable": [
-        3638
-      ],
-      "MerkleProofUpgradeable": [
-        3494
-      ],
-      "OwnableSkeleton": [
-        38636
-      ],
-      "PublicMulticall": [
-        38857
-      ],
-      "ReentrancyGuardUpgradeable": [
-        2692
-      ],
-      "UUPSUpgradeable": [
-        2633
-      ],
-      "Version": [
-        38881
-      ]
+      "AccessControlUpgradeable": [1809],
+      "ERC721AUpgradeable": [1398],
+      "ERC721Drop": [36473],
+      "ERC721DropStorageV1": [38271],
+      "ERC721DropStorageV2": [38276],
+      "ERC721Rewards": [5492],
+      "ERC721RewardsStorageV1": [5497],
+      "FundsReceiver": [38297],
+      "IERC165Upgradeable": [3550],
+      "IERC2981Upgradeable": [2028],
+      "IERC4906": [37236],
+      "IERC721AUpgradeable": [1469],
+      "IERC721Drop": [37556],
+      "IERC721Upgradeable": [2826],
+      "IFactoryUpgradeGate": [37583],
+      "IMetadataRenderer": [37603],
+      "IOwnable": [37635],
+      "IProtocolRewards": [5937],
+      "MathUpgradeable": [3638],
+      "MerkleProofUpgradeable": [3494],
+      "OwnableSkeleton": [38636],
+      "PublicMulticall": [38857],
+      "ReentrancyGuardUpgradeable": [2692],
+      "UUPSUpgradeable": [2633],
+      "Version": [38881]
     },
     "nodeType": "SourceUnit",
     "src": "32:63121:71",
@@ -5483,12 +5433,7 @@
         "nodeType": "PragmaDirective",
         "src": "32:24:71",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".10"
-        ]
+        "literals": ["solidity", "^", "0.8", ".10"]
       },
       {
         "id": 34595,
@@ -6440,9 +6385,7 @@
               "pathNode": {
                 "id": 34696,
                 "name": "IFactoryUpgradeGate",
-                "nameLocations": [
-                  "3882:19:71"
-                ],
+                "nameLocations": ["3882:19:71"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 37583,
                 "src": "3882:19:71"
@@ -8244,9 +8187,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              98
-            ],
+            "baseFunctions": [98],
             "documentation": {
               "id": 34846,
               "nodeType": "StructuredDocumentation",
@@ -8509,9 +8450,7 @@
                 "modifierName": {
                   "id": 34869,
                   "name": "initializer",
-                  "nameLocations": [
-                    "6918:11:71"
-                  ],
+                  "nameLocations": ["6918:11:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2471,
                   "src": "6918:11:71"
@@ -8551,9 +8490,7 @@
                 "modifierName": {
                   "id": 34871,
                   "name": "ERC721Rewards",
-                  "nameLocations": [
-                    "6930:13:71"
-                  ],
+                  "nameLocations": ["6930:13:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 5492,
                   "src": "6930:13:71"
@@ -8617,9 +8554,7 @@
                     "pathNode": {
                       "id": 34859,
                       "name": "IFactoryUpgradeGate",
-                      "nameLocations": [
-                        "6763:19:71"
-                      ],
+                      "nameLocations": ["6763:19:71"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37583,
                       "src": "6763:19:71"
@@ -9909,9 +9844,7 @@
                 "modifierName": {
                   "id": 34918,
                   "name": "initializer",
-                  "nameLocations": [
-                    "8462:11:71"
-                  ],
+                  "nameLocations": ["8462:11:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2471,
                   "src": "8462:11:71"
@@ -10147,9 +10080,7 @@
                     "pathNode": {
                       "id": 34910,
                       "name": "IMetadataRenderer",
-                      "nameLocations": [
-                        "8336:17:71"
-                      ],
+                      "nameLocations": ["8336:17:71"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37603,
                       "src": "8336:17:71"
@@ -10316,9 +10247,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37555
-            ],
+            "baseFunctions": [37555],
             "documentation": {
               "id": 35017,
               "nodeType": "StructuredDocumentation",
@@ -10517,14 +10446,8 @@
                       "isPure": false,
                       "kind": "functionCall",
                       "lValueRequested": false,
-                      "nameLocations": [
-                        "10334:8:71",
-                        "10379:12:71"
-                      ],
-                      "names": [
-                        "_newImpl",
-                        "_currentImpl"
-                      ],
+                      "nameLocations": ["10334:8:71", "10379:12:71"],
+                      "names": ["_newImpl", "_currentImpl"],
                       "nodeType": "FunctionCall",
                       "src": "10278:150:71",
                       "tryCall": false,
@@ -10605,9 +10528,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              2627
-            ],
+            "baseFunctions": [2627],
             "documentation": {
               "id": 35031,
               "nodeType": "StructuredDocumentation",
@@ -10623,9 +10544,7 @@
                 "modifierName": {
                   "id": 35036,
                   "name": "onlyAdmin",
-                  "nameLocations": [
-                    "10236:9:71"
-                  ],
+                  "nameLocations": ["10236:9:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34727,
                   "src": "10236:9:71"
@@ -10745,10 +10664,7 @@
                       "id": 35059,
                       "name": "_burn",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1106,
-                        1288
-                      ],
+                      "overloadedDeclarations": [1106, 1288],
                       "referencedDeclaration": 1288,
                       "src": "11266:5:71",
                       "typeDescriptions": {
@@ -11191,9 +11107,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              2027
-            ],
+            "baseFunctions": [2027],
             "documentation": {
               "id": 35066,
               "nodeType": "StructuredDocumentation",
@@ -11793,9 +11707,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37504
-            ],
+            "baseFunctions": [37504],
             "documentation": {
               "id": 35105,
               "nodeType": "StructuredDocumentation",
@@ -11839,10 +11751,7 @@
                     "pathNode": {
                       "id": 35107,
                       "name": "IERC721Drop.SaleDetails",
-                      "nameLocations": [
-                        "11958:11:71",
-                        "11970:11:71"
-                      ],
+                      "nameLocations": ["11958:11:71", "11970:11:71"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37464,
                       "src": "11958:23:71"
@@ -12122,11 +12031,7 @@
                       "13097:11:71",
                       "13201:10:71"
                     ],
-                    "names": [
-                      "presaleMints",
-                      "publicMints",
-                      "totalMints"
-                    ],
+                    "names": ["presaleMints", "publicMints", "totalMints"],
                     "nodeType": "FunctionCall",
                     "src": "12987:262:71",
                     "tryCall": false,
@@ -12142,9 +12047,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37513
-            ],
+            "baseFunctions": [37513],
             "documentation": {
               "id": 35139,
               "nodeType": "StructuredDocumentation",
@@ -12223,10 +12126,7 @@
                     "pathNode": {
                       "id": 35144,
                       "name": "IERC721Drop.AddressMintDetails",
-                      "nameLocations": [
-                        "12915:11:71",
-                        "12927:18:71"
-                      ],
+                      "nameLocations": ["12915:11:71", "12927:18:71"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37474,
                       "src": "12915:30:71"
@@ -12424,10 +12324,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              531,
-              2813
-            ],
+            "baseFunctions": [531, 2813],
             "documentation": {
               "id": 35167,
               "nodeType": "StructuredDocumentation",
@@ -12447,9 +12344,7 @@
                 {
                   "id": 35173,
                   "name": "IERC721Upgradeable",
-                  "nameLocations": [
-                    "13593:18:71"
-                  ],
+                  "nameLocations": ["13593:18:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2826,
                   "src": "13593:18:71"
@@ -12457,9 +12352,7 @@
                 {
                   "id": 35174,
                   "name": "ERC721AUpgradeable",
-                  "nameLocations": [
-                    "13613:18:71"
-                  ],
+                  "nameLocations": ["13613:18:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 1398,
                   "src": "13613:18:71"
@@ -12995,9 +12888,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37482
-            ],
+            "baseFunctions": [37482],
             "documentation": {
               "id": 35215,
               "nodeType": "StructuredDocumentation",
@@ -13014,9 +12905,7 @@
                 "modifierName": {
                   "id": 35219,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "18191:12:71"
-                  ],
+                  "nameLocations": ["18191:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "18191:12:71"
@@ -13030,9 +12919,7 @@
                 "modifierName": {
                   "id": 35221,
                   "name": "onlyPublicSaleActive",
-                  "nameLocations": [
-                    "18212:20:71"
-                  ],
+                  "nameLocations": ["18212:20:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34834,
                   "src": "18212:20:71"
@@ -13312,9 +13199,7 @@
                 "modifierName": {
                   "id": 35245,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "18694:12:71"
-                  ],
+                  "nameLocations": ["18694:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "18694:12:71"
@@ -13328,9 +13213,7 @@
                 "modifierName": {
                   "id": 35247,
                   "name": "onlyPublicSaleActive",
-                  "nameLocations": [
-                    "18715:20:71"
-                  ],
+                  "nameLocations": ["18715:20:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34834,
                   "src": "18715:20:71"
@@ -13622,9 +13505,7 @@
                 "modifierName": {
                   "id": 35273,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "19349:12:71"
-                  ],
+                  "nameLocations": ["19349:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "19349:12:71"
@@ -13638,9 +13519,7 @@
                 "modifierName": {
                   "id": 35275,
                   "name": "onlyPublicSaleActive",
-                  "nameLocations": [
-                    "19371:20:71"
-                  ],
+                  "nameLocations": ["19371:20:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34834,
                   "src": "19371:20:71"
@@ -13911,9 +13790,7 @@
                 "modifierName": {
                   "id": 35302,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "20018:12:71"
-                  ],
+                  "nameLocations": ["20018:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "20018:12:71"
@@ -13941,9 +13818,7 @@
                 "modifierName": {
                   "id": 35304,
                   "name": "canMintTokens",
-                  "nameLocations": [
-                    "20039:13:71"
-                  ],
+                  "nameLocations": ["20039:13:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34772,
                   "src": "20039:13:71"
@@ -13957,9 +13832,7 @@
                 "modifierName": {
                   "id": 35307,
                   "name": "onlyPublicSaleActive",
-                  "nameLocations": [
-                    "20071:20:71"
-                  ],
+                  "nameLocations": ["20071:20:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34834,
                   "src": "20071:20:71"
@@ -14262,9 +14135,7 @@
                   "src": "20407:48:71"
                 },
                 {
-                  "assignments": [
-                    35343
-                  ],
+                  "assignments": [35343],
                   "declarations": [
                     {
                       "constant": false,
@@ -14739,9 +14610,7 @@
                   "src": "20688:30:71"
                 },
                 {
-                  "assignments": [
-                    35376
-                  ],
+                  "assignments": [35376],
                   "declarations": [
                     {
                       "constant": false,
@@ -15188,9 +15057,7 @@
                     "src": "21303:216:71",
                     "statements": [
                       {
-                        "assignments": [
-                          35404
-                        ],
+                        "assignments": [35404],
                         "declarations": [
                           {
                             "constant": false,
@@ -15359,14 +15226,8 @@
                           "isPure": false,
                           "kind": "functionCall",
                           "lValueRequested": false,
-                          "nameLocations": [
-                            "21450:2:71",
-                            "21458:8:71"
-                          ],
-                          "names": [
-                            "to",
-                            "quantity"
-                          ],
+                          "nameLocations": ["21450:2:71", "21458:8:71"],
+                          "names": ["to", "quantity"],
                           "nodeType": "FunctionCall",
                           "src": "21443:33:71",
                           "tryCall": false,
@@ -15761,9 +15622,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37497
-            ],
+            "baseFunctions": [37497],
             "documentation": {
               "id": 35428,
               "nodeType": "StructuredDocumentation",
@@ -16152,9 +16011,7 @@
                 "modifierName": {
                   "id": 35469,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "27259:12:71"
-                  ],
+                  "nameLocations": ["27259:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "27259:12:71"
@@ -16168,9 +16025,7 @@
                 "modifierName": {
                   "id": 35471,
                   "name": "onlyPresaleActive",
-                  "nameLocations": [
-                    "27280:17:71"
-                  ],
+                  "nameLocations": ["27280:17:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34821,
                   "src": "27280:17:71"
@@ -16535,9 +16390,7 @@
                 "modifierName": {
                   "id": 35505,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "28191:12:71"
-                  ],
+                  "nameLocations": ["28191:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "28191:12:71"
@@ -16551,9 +16404,7 @@
                 "modifierName": {
                   "id": 35507,
                   "name": "onlyPresaleActive",
-                  "nameLocations": [
-                    "28212:17:71"
-                  ],
+                  "nameLocations": ["28212:17:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34821,
                   "src": "28212:17:71"
@@ -16902,9 +16753,7 @@
                   "src": "28716:33:71"
                 },
                 {
-                  "assignments": [
-                    35549
-                  ],
+                  "assignments": [35549],
                   "declarations": [
                     {
                       "constant": false,
@@ -17571,9 +17420,7 @@
                   "src": "29127:30:71"
                 },
                 {
-                  "assignments": [
-                    35595
-                  ],
+                  "assignments": [35595],
                   "declarations": [
                     {
                       "constant": false,
@@ -18165,9 +18012,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37538
-            ],
+            "baseFunctions": [37538],
             "documentation": {
               "id": 35614,
               "nodeType": "StructuredDocumentation",
@@ -18198,9 +18043,7 @@
                 "modifierName": {
                   "id": 35620,
                   "name": "onlyRoleOrAdmin",
-                  "nameLocations": [
-                    "32526:15:71"
-                  ],
+                  "nameLocations": ["32526:15:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34753,
                   "src": "32526:15:71"
@@ -18228,9 +18071,7 @@
                 "modifierName": {
                   "id": 35623,
                   "name": "canMintTokens",
-                  "nameLocations": [
-                    "32563:13:71"
-                  ],
+                  "nameLocations": ["32563:13:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34772,
                   "src": "32563:13:71"
@@ -18354,9 +18195,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    35656
-                  ],
+                  "assignments": [35656],
                   "declarations": [
                     {
                       "constant": false,
@@ -18403,9 +18242,7 @@
                   "src": "36226:28:71"
                 },
                 {
-                  "assignments": [
-                    35660
-                  ],
+                  "assignments": [35660],
                   "declarations": [
                     {
                       "constant": false,
@@ -18637,9 +18474,7 @@
                       },
                       "id": 35686,
                       "initializationExpression": {
-                        "assignments": [
-                          35664
-                        ],
+                        "assignments": [35664],
                         "declarations": [
                           {
                             "constant": false,
@@ -18806,9 +18641,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37547
-            ],
+            "baseFunctions": [37547],
             "documentation": {
               "id": 35639,
               "nodeType": "StructuredDocumentation",
@@ -18839,9 +18672,7 @@
                 "modifierName": {
                   "id": 35645,
                   "name": "onlyRoleOrAdmin",
-                  "nameLocations": [
-                    "36116:15:71"
-                  ],
+                  "nameLocations": ["36116:15:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34753,
                   "src": "36116:15:71"
@@ -18884,9 +18715,7 @@
                 "modifierName": {
                   "id": 35648,
                   "name": "canMintTokens",
-                  "nameLocations": [
-                    "36153:13:71"
-                  ],
+                  "nameLocations": ["36153:13:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34772,
                   "src": "36153:13:71"
@@ -19069,9 +18898,7 @@
                 "modifierName": {
                   "id": 35697,
                   "name": "onlyAdmin",
-                  "nameLocations": [
-                    "38565:9:71"
-                  ],
+                  "nameLocations": ["38565:9:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34727,
                   "src": "38565:9:71"
@@ -19416,14 +19243,8 @@
                     "isPure": false,
                     "kind": "functionCall",
                     "lValueRequested": false,
-                    "nameLocations": [
-                      "39117:6:71",
-                      "39151:8:71"
-                    ],
-                    "names": [
-                      "sender",
-                      "renderer"
-                    ],
+                    "nameLocations": ["39117:6:71", "39151:8:71"],
+                    "names": ["sender", "renderer"],
                     "nodeType": "FunctionCall",
                     "src": "39079:104:71",
                     "tryCall": false,
@@ -19474,9 +19295,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37528
-            ],
+            "baseFunctions": [37528],
             "documentation": {
               "id": 35706,
               "nodeType": "StructuredDocumentation",
@@ -19493,9 +19312,7 @@
                 "modifierName": {
                   "id": 35713,
                   "name": "onlyAdmin",
-                  "nameLocations": [
-                    "38896:9:71"
-                  ],
+                  "nameLocations": ["38896:9:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34727,
                   "src": "38896:9:71"
@@ -19531,9 +19348,7 @@
                     "pathNode": {
                       "id": 35707,
                       "name": "IMetadataRenderer",
-                      "nameLocations": [
-                        "38815:17:71"
-                      ],
+                      "nameLocations": ["38815:17:71"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37603,
                       "src": "38815:17:71"
@@ -19600,10 +19415,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    35755,
-                    35757
-                  ],
+                  "assignments": [35755, 35757],
                   "declarations": [
                     {
                       "constant": false,
@@ -19936,9 +19748,7 @@
                 "modifierName": {
                   "id": 35749,
                   "name": "onlyAdmin",
-                  "nameLocations": [
-                    "39535:9:71"
-                  ],
+                  "nameLocations": ["39535:9:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34727,
                   "src": "39535:9:71"
@@ -20521,9 +20331,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37405
-            ],
+            "baseFunctions": [37405],
             "documentation": {
               "id": 35781,
               "nodeType": "StructuredDocumentation",
@@ -20554,9 +20362,7 @@
                 "modifierName": {
                   "id": 35797,
                   "name": "onlyRoleOrAdmin",
-                  "nameLocations": [
-                    "42778:15:71"
-                  ],
+                  "nameLocations": ["42778:15:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34753,
                   "src": "42778:15:71"
@@ -20965,9 +20771,7 @@
                 "modifierName": {
                   "id": 35854,
                   "name": "onlyRoleOrAdmin",
-                  "nameLocations": [
-                    "45338:15:71"
-                  ],
+                  "nameLocations": ["45338:15:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34753,
                   "src": "45338:15:71"
@@ -21036,9 +20840,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    35878
-                  ],
+                  "assignments": [35878],
                   "declarations": [
                     {
                       "constant": false,
@@ -21159,9 +20961,7 @@
                   "src": "51643:29:71"
                 },
                 {
-                  "assignments": [
-                    35887
-                  ],
+                  "assignments": [35887],
                   "declarations": [
                     {
                       "constant": false,
@@ -21268,10 +21068,7 @@
                   "src": "51683:37:71"
                 },
                 {
-                  "assignments": [
-                    35895,
-                    null
-                  ],
+                  "assignments": [35895, null],
                   "declarations": [
                     {
                       "constant": false,
@@ -21383,10 +21180,7 @@
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "names": [
-                        "value",
-                        "gas"
-                      ],
+                      "names": ["value", "gas"],
                       "nodeType": "FunctionCallOptions",
                       "options": [
                         {
@@ -21738,9 +21532,7 @@
                 "modifierName": {
                   "id": 35874,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "51580:12:71"
-                  ],
+                  "nameLocations": ["51580:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "51580:12:71"
@@ -21849,9 +21641,7 @@
                   "src": "52384:33:71"
                 },
                 {
-                  "assignments": [
-                    35942
-                  ],
+                  "assignments": [35942],
                   "declarations": [
                     {
                       "constant": false,
@@ -22013,10 +21803,7 @@
                   "src": "52428:90:71"
                 },
                 {
-                  "assignments": [
-                    35953,
-                    null
-                  ],
+                  "assignments": [35953, null],
                   "declarations": [
                     {
                       "constant": false,
@@ -22253,9 +22040,7 @@
                 "modifierName": {
                   "id": 35933,
                   "name": "nonReentrant",
-                  "nameLocations": [
-                    "52361:12:71"
-                  ],
+                  "nameLocations": ["52361:12:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2686,
                   "src": "52361:12:71"
@@ -23142,9 +22927,7 @@
                 "modifierName": {
                   "id": 36000,
                   "name": "onlyRoleOrAdmin",
-                  "nameLocations": [
-                    "56342:15:71"
-                  ],
+                  "nameLocations": ["56342:15:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34753,
                   "src": "56342:15:71"
@@ -23238,10 +23021,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37519,
-              38620
-            ],
+            "baseFunctions": [37519, 38620],
             "documentation": {
               "id": 36036,
               "nodeType": "StructuredDocumentation",
@@ -23261,9 +23041,7 @@
                 {
                   "id": 36038,
                   "name": "OwnableSkeleton",
-                  "nameLocations": [
-                    "57047:15:71"
-                  ],
+                  "nameLocations": ["57047:15:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 38636,
                   "src": "57047:15:71"
@@ -23271,9 +23049,7 @@
                 {
                   "id": 36039,
                   "name": "IERC721Drop",
-                  "nameLocations": [
-                    "57064:11:71"
-                  ],
+                  "nameLocations": ["57064:11:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 37556,
                   "src": "57064:11:71"
@@ -23593,9 +23369,7 @@
                     "pathNode": {
                       "id": 36064,
                       "name": "IMetadataRenderer",
-                      "nameLocations": [
-                        "57476:17:71"
-                      ],
+                      "nameLocations": ["57476:17:71"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37603,
                       "src": "57476:17:71"
@@ -23845,9 +23619,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              402
-            ],
+            "baseFunctions": [402],
             "documentation": {
               "id": 36075,
               "nodeType": "StructuredDocumentation",
@@ -23951,9 +23723,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    36106
-                  ],
+                  "assignments": [36106],
                   "declarations": [
                     {
                       "constant": false,
@@ -24083,9 +23853,7 @@
                                 "id": 36114,
                                 "name": "_startTokenId",
                                 "nodeType": "Identifier",
-                                "overloadedDeclarations": [
-                                  34855
-                                ],
+                                "overloadedDeclarations": [34855],
                                 "referencedDeclaration": 34855,
                                 "src": "58487:13:71",
                                 "typeDescriptions": {
@@ -24140,9 +23908,7 @@
                                   "id": 36117,
                                   "name": "_startTokenId",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    34855
-                                  ],
+                                  "overloadedDeclarations": [34855],
                                   "referencedDeclaration": 34855,
                                   "src": "58534:13:71",
                                   "typeDescriptions": {
@@ -24260,10 +24026,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    null,
-                    36131
-                  ],
+                  "assignments": [null, 36131],
                   "declarations": [
                     null,
                     {
@@ -24348,10 +24111,7 @@
                   "src": "58689:48:71"
                 },
                 {
-                  "assignments": [
-                    36137,
-                    null
-                  ],
+                  "assignments": [36137, null],
                   "declarations": [
                     {
                       "constant": false,
@@ -24447,10 +24207,7 @@
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "names": [
-                        "value",
-                        "gas"
-                      ],
+                      "names": ["value", "gas"],
                       "nodeType": "FunctionCallOptions",
                       "options": [
                         {
@@ -26022,9 +25779,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    36266
-                  ],
+                  "assignments": [36266],
                   "declarations": [
                     {
                       "constant": false,
@@ -26135,9 +25890,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    36276
-                  ],
+                  "assignments": [36276],
                   "declarations": [
                     {
                       "constant": false,
@@ -26310,9 +26063,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    36290
-                  ],
+                  "assignments": [36290],
                   "declarations": [
                     {
                       "constant": false,
@@ -27108,9 +26859,7 @@
                 "modifierName": {
                   "id": 36335,
                   "name": "onlyAdmin",
-                  "nameLocations": [
-                    "61260:9:71"
-                  ],
+                  "nameLocations": ["61260:9:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 34727,
                   "src": "61260:9:71"
@@ -28656,11 +28405,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              158,
-              1545,
-              3549
-            ],
+            "baseFunctions": [158, 1545, 3549],
             "documentation": {
               "id": 36427,
               "nodeType": "StructuredDocumentation",
@@ -28680,9 +28425,7 @@
                 {
                   "id": 36431,
                   "name": "IERC165Upgradeable",
-                  "nameLocations": [
-                    "62618:18:71"
-                  ],
+                  "nameLocations": ["62618:18:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 3550,
                   "src": "62618:18:71"
@@ -28690,9 +28433,7 @@
                 {
                   "id": 36432,
                   "name": "ERC721AUpgradeable",
-                  "nameLocations": [
-                    "62650:18:71"
-                  ],
+                  "nameLocations": ["62650:18:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 1398,
                   "src": "62650:18:71"
@@ -28700,9 +28441,7 @@
                 {
                   "id": 36433,
                   "name": "AccessControlUpgradeable",
-                  "nameLocations": [
-                    "62682:24:71"
-                  ],
+                  "nameLocations": ["62682:24:71"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 1809,
                   "src": "62682:24:71"
@@ -28790,9 +28529,7 @@
             "baseName": {
               "id": 34642,
               "name": "ERC721AUpgradeable",
-              "nameLocations": [
-                "2967:18:71"
-              ],
+              "nameLocations": ["2967:18:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 1398,
               "src": "2967:18:71"
@@ -28805,9 +28542,7 @@
             "baseName": {
               "id": 34644,
               "name": "UUPSUpgradeable",
-              "nameLocations": [
-                "2991:15:71"
-              ],
+              "nameLocations": ["2991:15:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 2633,
               "src": "2991:15:71"
@@ -28820,9 +28555,7 @@
             "baseName": {
               "id": 34646,
               "name": "IERC2981Upgradeable",
-              "nameLocations": [
-                "3012:19:71"
-              ],
+              "nameLocations": ["3012:19:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 2028,
               "src": "3012:19:71"
@@ -28835,9 +28568,7 @@
             "baseName": {
               "id": 34648,
               "name": "IERC4906",
-              "nameLocations": [
-                "3037:8:71"
-              ],
+              "nameLocations": ["3037:8:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 37236,
               "src": "3037:8:71"
@@ -28850,9 +28581,7 @@
             "baseName": {
               "id": 34650,
               "name": "ReentrancyGuardUpgradeable",
-              "nameLocations": [
-                "3051:26:71"
-              ],
+              "nameLocations": ["3051:26:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 2692,
               "src": "3051:26:71"
@@ -28865,9 +28594,7 @@
             "baseName": {
               "id": 34652,
               "name": "AccessControlUpgradeable",
-              "nameLocations": [
-                "3083:24:71"
-              ],
+              "nameLocations": ["3083:24:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 1809,
               "src": "3083:24:71"
@@ -28880,9 +28607,7 @@
             "baseName": {
               "id": 34654,
               "name": "IERC721Drop",
-              "nameLocations": [
-                "3113:11:71"
-              ],
+              "nameLocations": ["3113:11:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 37556,
               "src": "3113:11:71"
@@ -28895,9 +28620,7 @@
             "baseName": {
               "id": 34656,
               "name": "PublicMulticall",
-              "nameLocations": [
-                "3130:15:71"
-              ],
+              "nameLocations": ["3130:15:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 38857,
               "src": "3130:15:71"
@@ -28910,9 +28633,7 @@
             "baseName": {
               "id": 34658,
               "name": "OwnableSkeleton",
-              "nameLocations": [
-                "3151:15:71"
-              ],
+              "nameLocations": ["3151:15:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 38636,
               "src": "3151:15:71"
@@ -28925,9 +28646,7 @@
             "baseName": {
               "id": 34660,
               "name": "FundsReceiver",
-              "nameLocations": [
-                "3172:13:71"
-              ],
+              "nameLocations": ["3172:13:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 38297,
               "src": "3172:13:71"
@@ -28958,9 +28677,7 @@
             "baseName": {
               "id": 34662,
               "name": "Version",
-              "nameLocations": [
-                "3191:7:71"
-              ],
+              "nameLocations": ["3191:7:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 38881,
               "src": "3191:7:71"
@@ -28973,9 +28690,7 @@
             "baseName": {
               "id": 34665,
               "name": "ERC721DropStorageV1",
-              "nameLocations": [
-                "3208:19:71"
-              ],
+              "nameLocations": ["3208:19:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 38271,
               "src": "3208:19:71"
@@ -28988,9 +28703,7 @@
             "baseName": {
               "id": 34667,
               "name": "ERC721DropStorageV2",
-              "nameLocations": [
-                "3233:19:71"
-              ],
+              "nameLocations": ["3233:19:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 38276,
               "src": "3233:19:71"
@@ -29003,9 +28716,7 @@
             "baseName": {
               "id": 34669,
               "name": "ERC721Rewards",
-              "nameLocations": [
-                "3258:13:71"
-              ],
+              "nameLocations": ["3258:13:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 5492,
               "src": "3258:13:71"
@@ -29018,9 +28729,7 @@
             "baseName": {
               "id": 34671,
               "name": "ERC721RewardsStorageV1",
-              "nameLocations": [
-                "3277:22:71"
-              ],
+              "nameLocations": ["3277:22:71"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 5497,
               "src": "3277:22:71"
@@ -29041,79 +28750,18 @@
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          36473,
-          5497,
-          5492,
-          5790,
-          38276,
-          38271,
-          38881,
-          38297,
-          38636,
-          37635,
-          38857,
-          37556,
-          1809,
-          2692,
-          37236,
-          2028,
-          2633,
-          2413,
-          2044,
-          1398,
-          1469,
-          2853,
-          2826,
-          3538,
-          3550,
-          1882,
-          3138,
-          2497
+          36473, 5497, 5492, 5790, 38276, 38271, 38881, 38297, 38636, 37635,
+          38857, 37556, 1809, 2692, 37236, 2028, 2633, 2413, 2044, 1398, 1469,
+          2853, 2826, 3538, 3550, 1882, 3138, 2497
         ],
         "name": "ERC721Drop",
         "nameLocation": "2949:10:71",
         "scope": 36474,
         "usedErrors": [
-          1410,
-          1413,
-          1416,
-          1419,
-          1422,
-          1425,
-          1428,
-          1431,
-          1434,
-          1437,
-          1440,
-          1443,
-          1446,
-          5515,
-          5517,
-          5519,
-          5521,
-          37244,
-          37249,
-          37252,
-          37255,
-          37258,
-          37261,
-          37264,
-          37269,
-          37272,
-          37275,
-          37278,
-          37281,
-          37284,
-          37289,
-          37292,
-          37295,
-          37298,
-          37303,
-          37308,
-          37311,
-          37314,
-          37608,
-          37610
+          1410, 1413, 1416, 1419, 1422, 1425, 1428, 1431, 1434, 1437, 1440,
+          1443, 1446, 5515, 5517, 5519, 5521, 37244, 37249, 37252, 37255, 37258,
+          37261, 37264, 37269, 37272, 37275, 37278, 37281, 37284, 37289, 37292,
+          37295, 37298, 37303, 37308, 37311, 37314, 37608, 37610
         ]
       }
     ],

@@ -2426,39 +2426,17 @@
     "absolutePath": "src/ZoraNFTCreatorV1.sol",
     "id": 37191,
     "exportedSymbols": {
-      "DropMetadataRenderer": [
-        37925
-      ],
-      "ERC721Drop": [
-        36473
-      ],
-      "ERC721DropProxy": [
-        36493
-      ],
-      "EditionMetadataRenderer": [
-        38221
-      ],
-      "IContractMetadata": [
-        37212
-      ],
-      "IERC721Drop": [
-        37556
-      ],
-      "IMetadataRenderer": [
-        37603
-      ],
-      "OwnableUpgradeable": [
-        2006
-      ],
-      "UUPSUpgradeable": [
-        2633
-      ],
-      "Version": [
-        38881
-      ],
-      "ZoraNFTCreatorV1": [
-        37190
-      ]
+      "DropMetadataRenderer": [37925],
+      "ERC721Drop": [36473],
+      "ERC721DropProxy": [36493],
+      "EditionMetadataRenderer": [38221],
+      "IContractMetadata": [37212],
+      "IERC721Drop": [37556],
+      "IMetadataRenderer": [37603],
+      "OwnableUpgradeable": [2006],
+      "UUPSUpgradeable": [2633],
+      "Version": [38881],
+      "ZoraNFTCreatorV1": [37190]
     },
     "nodeType": "SourceUnit",
     "src": "32:18090:75",
@@ -2468,12 +2446,7 @@
         "nodeType": "PragmaDirective",
         "src": "32:24:75",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".10"
-        ]
+        "literals": ["solidity", "^", "0.8", ".10"]
       },
       {
         "id": 36645,
@@ -2958,9 +2931,7 @@
               "pathNode": {
                 "id": 36690,
                 "name": "EditionMetadataRenderer",
-                "nameLocations": [
-                  "1345:23:75"
-                ],
+                "nameLocations": ["1345:23:75"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 38221,
                 "src": "1345:23:75"
@@ -3003,9 +2974,7 @@
               "pathNode": {
                 "id": 36694,
                 "name": "DropMetadataRenderer",
-                "nameLocations": [
-                  "1454:20:75"
-                ],
+                "nameLocations": ["1454:20:75"],
                 "nodeType": "IdentifierPath",
                 "referencedDeclaration": 37925,
                 "src": "1454:20:75"
@@ -3151,10 +3120,7 @@
                       "id": 36710,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1992:7:75",
                       "typeDescriptions": {
@@ -3348,10 +3314,7 @@
                       "id": 36720,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2056:7:75",
                       "typeDescriptions": {
@@ -3545,10 +3508,7 @@
                       "id": 36733,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2172:7:75",
                       "typeDescriptions": {
@@ -3722,9 +3682,7 @@
                 "modifierName": {
                   "id": 36707,
                   "name": "initializer",
-                  "nameLocations": [
-                    "1970:11:75"
-                  ],
+                  "nameLocations": ["1970:11:75"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2471,
                   "src": "1970:11:75"
@@ -3788,9 +3746,7 @@
                     "pathNode": {
                       "id": 36700,
                       "name": "EditionMetadataRenderer",
-                      "nameLocations": [
-                        "1863:23:75"
-                      ],
+                      "nameLocations": ["1863:23:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 38221,
                       "src": "1863:23:75"
@@ -3825,9 +3781,7 @@
                     "pathNode": {
                       "id": 36703,
                       "name": "DropMetadataRenderer",
-                      "nameLocations": [
-                        "1921:20:75"
-                      ],
+                      "nameLocations": ["1921:20:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37925,
                       "src": "1921:20:75"
@@ -3956,9 +3910,7 @@
                 "modifierName": {
                   "id": 36762,
                   "name": "initializer",
-                  "nameLocations": [
-                    "2486:11:75"
-                  ],
+                  "nameLocations": ["2486:11:75"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 2471,
                   "src": "2486:11:75"
@@ -4021,9 +3973,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37205
-            ],
+            "baseFunctions": [37205],
             "functionSelector": "75d0c0dc",
             "implemented": true,
             "kind": "function",
@@ -4116,9 +4066,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              37211
-            ],
+            "baseFunctions": [37211],
             "functionSelector": "e8a3d485",
             "implemented": true,
             "kind": "function",
@@ -4722,9 +4670,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              2627
-            ],
+            "baseFunctions": [2627],
             "documentation": {
               "id": 36791,
               "nodeType": "StructuredDocumentation",
@@ -4740,9 +4686,7 @@
                 "modifierName": {
                   "id": 36796,
                   "name": "onlyOwner",
-                  "nameLocations": [
-                    "3070:9:75"
-                  ],
+                  "nameLocations": ["3070:9:75"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 1943,
                   "src": "3070:9:75"
@@ -4817,9 +4761,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    36863
-                  ],
+                  "assignments": [36863],
                   "declarations": [
                     {
                       "constant": false,
@@ -4842,9 +4784,7 @@
                         "pathNode": {
                           "id": 36861,
                           "name": "ERC721DropProxy",
-                          "nameLocations": [
-                            "3796:15:75"
-                          ],
+                          "nameLocations": ["3796:15:75"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 36493,
                           "src": "3796:15:75"
@@ -4919,9 +4859,7 @@
                         "pathNode": {
                           "id": 36864,
                           "name": "ERC721DropProxy",
-                          "nameLocations": [
-                            "3826:15:75"
-                          ],
+                          "nameLocations": ["3826:15:75"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 36493,
                           "src": "3826:15:75"
@@ -5593,9 +5531,7 @@
                     "pathNode": {
                       "id": 36850,
                       "name": "IMetadataRenderer",
-                      "nameLocations": [
-                        "3623:17:75"
-                      ],
+                      "nameLocations": ["3623:17:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37603,
                       "src": "3623:17:75"
@@ -5719,9 +5655,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    36930
-                  ],
+                  "assignments": [36930],
                   "declarations": [
                     {
                       "constant": false,
@@ -6217,9 +6151,7 @@
                   "src": "7450:383:75"
                 },
                 {
-                  "assignments": [
-                    36963
-                  ],
+                  "assignments": [36963],
                   "declarations": [
                     {
                       "constant": false,
@@ -6556,11 +6488,7 @@
                     "isPure": false,
                     "kind": "functionCall",
                     "lValueRequested": false,
-                    "nameLocations": [
-                      "8335:7:75",
-                      "8368:11:75",
-                      "8406:22:75"
-                    ],
+                    "nameLocations": ["8335:7:75", "8368:11:75", "8406:22:75"],
                     "names": [
                       "creator",
                       "editionSize",
@@ -6799,10 +6727,7 @@
                     "pathNode": {
                       "id": 36912,
                       "name": "IERC721Drop.SalesConfiguration",
-                      "nameLocations": [
-                        "7191:11:75",
-                        "7203:18:75"
-                      ],
+                      "nameLocations": ["7191:11:75", "7203:18:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37441,
                       "src": "7191:30:75"
@@ -6837,9 +6762,7 @@
                     "pathNode": {
                       "id": 36915,
                       "name": "IMetadataRenderer",
-                      "nameLocations": [
-                        "7249:17:75"
-                      ],
+                      "nameLocations": ["7249:17:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37603,
                       "src": "7249:17:75"
@@ -6963,9 +6886,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    37013
-                  ],
+                  "assignments": [37013],
                   "declarations": [
                     {
                       "constant": false,
@@ -7552,10 +7473,7 @@
                     "pathNode": {
                       "id": 37001,
                       "name": "IERC721Drop.SalesConfiguration",
-                      "nameLocations": [
-                        "11307:11:75",
-                        "11319:18:75"
-                      ],
+                      "nameLocations": ["11307:11:75", "11319:18:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37441,
                       "src": "11307:30:75"
@@ -7678,9 +7596,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    37064
-                  ],
+                  "assignments": [37064],
                   "declarations": [
                     {
                       "constant": false,
@@ -8212,10 +8128,7 @@
                     "pathNode": {
                       "id": 37050,
                       "name": "IERC721Drop.SalesConfiguration",
-                      "nameLocations": [
-                        "12330:11:75",
-                        "12342:18:75"
-                      ],
+                      "nameLocations": ["12330:11:75", "12342:18:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37441,
                       "src": "12330:30:75"
@@ -8366,9 +8279,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    37113
-                  ],
+                  "assignments": [37113],
                   "declarations": [
                     {
                       "constant": false,
@@ -8971,10 +8882,7 @@
                     "pathNode": {
                       "id": 37099,
                       "name": "IERC721Drop.SalesConfiguration",
-                      "nameLocations": [
-                        "16192:11:75",
-                        "16204:18:75"
-                      ],
+                      "nameLocations": ["16192:11:75", "16204:18:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37441,
                       "src": "16192:30:75"
@@ -9124,9 +9032,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    37167
-                  ],
+                  "assignments": [37167],
                   "declarations": [
                     {
                       "constant": false,
@@ -9674,10 +9580,7 @@
                     "pathNode": {
                       "id": 37151,
                       "name": "IERC721Drop.SalesConfiguration",
-                      "nameLocations": [
-                        "17254:11:75",
-                        "17266:18:75"
-                      ],
+                      "nameLocations": ["17254:11:75", "17266:18:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 37441,
                       "src": "17254:30:75"
@@ -9850,9 +9753,7 @@
             "baseName": {
               "id": 36665,
               "name": "OwnableUpgradeable",
-              "nameLocations": [
-                "821:18:75"
-              ],
+              "nameLocations": ["821:18:75"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 2006,
               "src": "821:18:75"
@@ -9865,9 +9766,7 @@
             "baseName": {
               "id": 36667,
               "name": "UUPSUpgradeable",
-              "nameLocations": [
-                "841:15:75"
-              ],
+              "nameLocations": ["841:15:75"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 2633,
               "src": "841:15:75"
@@ -9880,9 +9779,7 @@
             "baseName": {
               "id": 36669,
               "name": "IContractMetadata",
-              "nameLocations": [
-                "858:17:75"
-              ],
+              "nameLocations": ["858:17:75"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 37212,
               "src": "858:17:75"
@@ -9913,9 +9810,7 @@
             "baseName": {
               "id": 36671,
               "name": "Version",
-              "nameLocations": [
-                "877:7:75"
-              ],
+              "nameLocations": ["877:7:75"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 38881,
               "src": "877:7:75"
@@ -9926,9 +9821,7 @@
           }
         ],
         "canonicalName": "ZoraNFTCreatorV1",
-        "contractDependencies": [
-          36493
-        ],
+        "contractDependencies": [36493],
         "contractKind": "contract",
         "documentation": {
           "id": 36664,
@@ -9938,22 +9831,12 @@
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          37190,
-          38881,
-          37212,
-          2633,
-          2413,
-          2044,
-          2006,
-          3138,
-          2497
+          37190, 38881, 37212, 2633, 2413, 2044, 2006, 3138, 2497
         ],
         "name": "ZoraNFTCreatorV1",
         "nameLocation": "801:16:75",
         "scope": 37191,
-        "usedErrors": [
-          37199
-        ]
+        "usedErrors": [37199]
       }
     ],
     "license": "MIT"

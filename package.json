@@ -11,10 +11,12 @@
     "format": "prettier-eslint --write \"**/*.{js,md}\""
   },
   "dependencies": {
+    "@nomicfoundation/hardhat-foundry": "^1.1.2",
     "dotenv": "^16.4.5",
     "hardhat": "^2.22.3",
     "keccak256": "^1.0.6",
-    "merkletreejs": "^0.3.11"
+    "merkletreejs": "^0.3.11",
+    "prettier": "^3.3.2"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",

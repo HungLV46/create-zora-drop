@@ -8,8 +8,8 @@ function hashForEntry(entry) {
   return keccak256(
     defaultAbiCoder.encode(
       ["address", "uint256", "uint256"],
-      [getAddress(entry.user), entry.maxCanMint, entry.price]
-    )
+      [getAddress(entry.user), entry.maxCanMint, entry.price],
+    ),
   );
 }
 
@@ -21,7 +21,7 @@ function makeTree(entries) {
   const tree = new MerkleTree(
     entries.map((entry) => entry.hash),
     keccak256,
-    { sortPairs: true }
+    { sortPairs: true },
   );
   entries = entries.map((entry) => {
     entry.hash = hexValue(entry.hash);
@@ -36,4 +36,4 @@ function makeTree(entries) {
   };
 }
 
-module.exports = { makeTree, hashForEntry }
+module.exports = { makeTree, hashForEntry };

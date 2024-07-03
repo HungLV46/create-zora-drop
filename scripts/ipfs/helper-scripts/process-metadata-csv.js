@@ -1,43 +1,46 @@
-const { readCSV } = require('../../util');
-const _ = require('lodash');
-const { ValidationError } = require('../../util');
+const { readCSV } = require("../../util");
+const _ = require("lodash");
+const { ValidationError } = require("../../util");
 
 const METADATA_CSV_FORMAT = {
-  ONE_TO_ONE: 'one_to_one',
-  ONE_TO_MANY: 'one_to_many'
+  ONE_TO_ONE: "one_to_one",
+  ONE_TO_MANY: "one_to_many",
 };
 
 const validateEmptyHeaders = (headers) => {
   headers.forEach((header, index) => {
     if (_.isEmpty(header)) {
-      throw new ValidationError('CSV header error', `Header (column: ${index + 1}) is empty`);
+      throw new ValidationError(
+        "CSV header error",
+        `Header (column: ${index + 1}) is empty`,
+      );
     }
   });
 };
 
 const validateOneToOneHeaders = (headers) => {
   if (
-    headers[0].toLowerCase() !== 'filename' ||
-    headers[1].toLowerCase() !== 'name' ||
-    headers[2].toLowerCase() !== 'description'
+    headers[0].toLowerCase() !== "filename" ||
+    headers[1].toLowerCase() !== "name" ||
+    headers[2].toLowerCase() !== "description"
   ) {
     throw new ValidationError(
-      'CSV header error',
+      "CSV header error",
       `With CSV format "${METADATA_CSV_FORMAT.ONE_TO_ONE}",
-      CSV headers must be: filename, name, description, <...attributes>`
+      CSV headers must be: filename, name, description, <...attributes>`,
     );
   }
 };
 
 const validateOneToManyHeaders = (headers) => {
   if (
-    headers[0].toLowerCase() !== 'filename' ||
-    headers[1].toLowerCase() !== 'quantity' ||
-    headers[2].toLowerCase() !== 'description'
+    headers[0].toLowerCase() !== "filename" ||
+    headers[1].toLowerCase() !== "quantity" ||
+    headers[2].toLowerCase() !== "description"
   ) {
     throw new ValidationError(
-      'CSV header error',
-      `With CSV format is "${METADATA_CSV_FORMAT.ONE_TO_MANY}", CSV headers must be: filename, quantity ,description, <...attributes>`
+      "CSV header error",
+      `With CSV format is "${METADATA_CSV_FORMAT.ONE_TO_MANY}", CSV headers must be: filename, quantity ,description, <...attributes>`,
     );
   }
 };
@@ -45,7 +48,10 @@ const validateOneToManyHeaders = (headers) => {
 const validateAttributes = (attributes) => {
   attributes.forEach((attribute) => {
     if (_.isEmpty(attribute)) {
-      throw new ValidationError('Attribute headers data error', "Attribute can't be empty.");
+      throw new ValidationError(
+        "Attribute headers data error",
+        "Attribute can't be empty.",
+      );
     }
   });
 };
@@ -57,7 +63,10 @@ const validateFilenames = (content) => {
   const duplicateNames = new Set();
   filenames.forEach((name) => {
     if (_.isEmpty(name)) {
-      throw new ValidationError('Data in row filename error', "Filename can't be empty.");
+      throw new ValidationError(
+        "Data in row filename error",
+        "Filename can't be empty.",
+      );
     }
 
     if (nameSet.has(name)) {
@@ -68,7 +77,10 @@ const validateFilenames = (content) => {
   });
 
   if (!_.isEmpty(duplicateNames)) {
-    throw new ValidationError('Data in row filename error', `Duplicate filenames: [${Array.from(duplicateNames)}].`);
+    throw new ValidationError(
+      "Data in row filename error",
+      `Duplicate filenames: [${Array.from(duplicateNames)}].`,
+    );
   }
 };
 
@@ -77,13 +89,16 @@ const validateNames = (content) => {
 
   nftnames.forEach((name) => {
     if (_.isEmpty(name)) {
-      throw new ValidationError('Data in row name error', "Name can't be empty.");
+      throw new ValidationError(
+        "Data in row name error",
+        "Name can't be empty.",
+      );
     }
 
     if (name.length > 100) {
       throw new ValidationError(
-        'Data in row name error',
-        "Name's length must be less than or equal to 100 characters."
+        "Data in row name error",
+        "Name's length must be less than or equal to 100 characters.",
       );
     }
   });
@@ -92,8 +107,8 @@ const validateNames = (content) => {
 const validateMaxSupply = (content, maxSupply) => {
   if (maxSupply && maxSupply !== content.length) {
     throw new ValidationError(
-      'Number of row error',
-      `Number of non-empty content row ${content.length} must be equal to max supply (${maxSupply}) defined in collection information tab.`
+      "Number of row error",
+      `Number of non-empty content row ${content.length} must be equal to max supply (${maxSupply}) defined in collection information tab.`,
     );
   }
 };
@@ -102,17 +117,20 @@ const validateQuantities = (content, maxSupply) => {
   const quantities = content.map((row) => row[1]);
   quantities.forEach((quantity) => {
     if (isNaN(Number(quantity)) || parseInt(quantity) < 1) {
-      throw new ValidationError('Data in row quantity error', 'Quantity must be Integer which is greater than 0.');
+      throw new ValidationError(
+        "Data in row quantity error",
+        "Quantity must be Integer which is greater than 0.",
+      );
     }
   });
   const noMetadataObject = quantities.reduce(
     (partialSum, currentQuantity) => partialSum + parseInt(currentQuantity),
-    0
+    0,
   );
   if (noMetadataObject != maxSupply) {
     throw new ValidationError(
-      'Number of row error',
-      `Total number of quantity ${noMetadataObject} must be equal to max supply (${maxSupply}) defined in collection information tab.`
+      "Number of row error",
+      `Total number of quantity ${noMetadataObject} must be equal to max supply (${maxSupply}) defined in collection information tab.`,
     );
   }
 };
@@ -123,8 +141,8 @@ const validateDescriptions = (content) => {
   descriptions.forEach((description) => {
     if (!_.isEmpty(description) && description.length > 1000) {
       throw new ValidationError(
-        'Data in row description error',
-        'Description length must be less than or equal to 1000.'
+        "Data in row description error",
+        "Description length must be less than or equal to 1000.",
       );
     }
   });
@@ -133,7 +151,10 @@ const validateDescriptions = (content) => {
 const convertToMetadataOneToOne = (traitTypes, content, tokenIdInfo) => {
   let currentTokenId = tokenIdInfo.startTokenId ? tokenIdInfo.startTokenId : 1;
   return content.map((row) => {
-    while (tokenIdInfo.reservedTokenIds && tokenIdInfo.reservedTokenIds.includes(currentTokenId)) {
+    while (
+      tokenIdInfo.reservedTokenIds &&
+      tokenIdInfo.reservedTokenIds.includes(currentTokenId)
+    ) {
       currentTokenId++;
     }
     const metadataObject = {
@@ -145,9 +166,9 @@ const convertToMetadataOneToOne = (traitTypes, content, tokenIdInfo) => {
         .slice(3) // in a row in a CSV file, attributes stored from the 4th record, onward
         .map((value, index) => ({
           trait_type: traitTypes[index],
-          value
+          value,
         }))
-        .filter(({ value }) => !_.isEmpty(value))
+        .filter(({ value }) => !_.isEmpty(value)),
     };
     currentTokenId++;
     return metadataObject;
@@ -155,12 +176,17 @@ const convertToMetadataOneToOne = (traitTypes, content, tokenIdInfo) => {
 };
 
 const convertToMetadataOneToMany = (traitTypes, content, tokenIdInfo) => {
-  let currentTokenId = tokenIdInfo.startTokenId ? tokenIdInfo.startTokenId.toString() : '1';
+  let currentTokenId = tokenIdInfo.startTokenId
+    ? tokenIdInfo.startTokenId.toString()
+    : "1";
   return content
     .map((row) => {
       const quantity = parseInt(row[1]);
       return range(1, quantity + 1).map((_, index) => {
-        while (tokenIdInfo.reservedTokenIds && tokenIdInfo.reservedTokenIds.includes(currentTokenId)) {
+        while (
+          tokenIdInfo.reservedTokenIds &&
+          tokenIdInfo.reservedTokenIds.includes(currentTokenId)
+        ) {
           currentTokenId++;
         }
         const metadataObject = {
@@ -172,9 +198,9 @@ const convertToMetadataOneToMany = (traitTypes, content, tokenIdInfo) => {
             .slice(3) // in a row in a CSV file, attributes stored from the 4th record, onward
             .map((value, j) => ({
               trait_type: traitTypes[j],
-              value
+              value,
             }))
-            .filter(({ value }) => !_.isEmpty(value))
+            .filter(({ value }) => !_.isEmpty(value)),
         };
         currentTokenId++;
         return metadataObject;
@@ -183,7 +209,11 @@ const convertToMetadataOneToMany = (traitTypes, content, tokenIdInfo) => {
     .flat();
 };
 
-const validateThenConvertCsv = async (metadataFilepath, format = METADATA_CSV_FORMAT.ONE_TO_ONE, tokenIdInfo) => {
+const validateThenConvertCsv = async (
+  metadataFilepath,
+  format = METADATA_CSV_FORMAT.ONE_TO_ONE,
+  tokenIdInfo,
+) => {
   const data = await readCSV(metadataFilepath);
 
   const trimedData = data
@@ -206,28 +236,40 @@ const validateThenConvertCsv = async (metadataFilepath, format = METADATA_CSV_FO
       validateOneToOneHeaders(headers);
       validateNames(content);
       validateMaxSupply(content, tokenIdInfo.maxSupply);
-      metadataObjects = convertToMetadataOneToOne(attributes, content, tokenIdInfo);
+      metadataObjects = convertToMetadataOneToOne(
+        attributes,
+        content,
+        tokenIdInfo,
+      );
       break;
     }
     case METADATA_CSV_FORMAT.ONE_TO_MANY: {
       validateOneToManyHeaders(headers);
       validateQuantities(content, tokenIdInfo.maxSupply);
-      metadataObjects = convertToMetadataOneToMany(attributes, content, tokenIdInfo);
+      metadataObjects = convertToMetadataOneToMany(
+        attributes,
+        content,
+        tokenIdInfo,
+      );
       break;
     }
     default:
-      throw new ValidationError(`CSV format type: "${format}" is not supported!`);
+      throw new ValidationError(
+        `CSV format type: "${format}" is not supported!`,
+      );
   }
   metadataObjects.sort((o1, o2) => {
     if (!o1.filename || !o2.filename) return 0; // in reality, filename is guaranteed to exist
-    return o1.filename.localeCompare(o2.filename, undefined, { sensitivity: 'variant', numeric: true });
+    return o1.filename.localeCompare(o2.filename, undefined, {
+      sensitivity: "variant",
+      numeric: true,
+    });
   });
 
   return {
     metadataObjects,
-    filenames: new Set(content.map((row) => row[0]))
-  }
-}
+    filenames: new Set(content.map((row) => row[0])),
+  };
+};
 
 module.exports = { validateThenConvertCsv };
-
